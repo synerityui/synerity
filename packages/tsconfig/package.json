@@ -1,0 +1,7 @@
+{
+  "name": "@synerity/tsconfig",
+  "version": "0.0.1",
+  "description": "Shared TypeScript configurations for Synerity packages",
+  "license": "MIT",
+  "files": ["base.json", "react.json", "node.json"]
+}

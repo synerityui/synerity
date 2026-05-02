@@ -1,0 +1,35 @@
+.root {
+  font-family: var(--synerity-font-sans);
+  margin: 0;
+  line-height: var(--synerity-leading-normal);
+}
+
+/* Size */
+.xs   { font-size: var(--synerity-text-xs); }
+.sm   { font-size: var(--synerity-text-sm); }
+.md   { font-size: var(--synerity-text-md); }
+.lg   { font-size: var(--synerity-text-lg); }
+.xl   { font-size: var(--synerity-text-xl); }
+.2xl  { font-size: var(--synerity-text-2xl); }
+
+/* Weight */
+.normal   { font-weight: var(--synerity-weight-normal); }
+.medium   { font-weight: var(--synerity-weight-medium); }
+.semibold { font-weight: var(--synerity-weight-semibold); }
+.bold     { font-weight: var(--synerity-weight-bold); }
+
+/* Colour */
+.primary   { color: var(--synerity-color-text-primary); }
+.secondary { color: var(--synerity-color-text-secondary); }
+.tertiary  { color: var(--synerity-color-text-tertiary); }
+.disabled  { color: var(--synerity-color-text-disabled); }
+.danger    { color: var(--synerity-color-danger); }
+.success   { color: var(--synerity-color-success); }
+.inherit   { color: inherit; }
+
+/* Truncate */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

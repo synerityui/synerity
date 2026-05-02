@@ -5,16 +5,22 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "test": "turbo test",
+    "test": "vitest run --workspace vitest.workspace.ts",
+    "test:watch": "vitest --workspace vitest.workspace.ts",
+    "test:coverage": "vitest run --workspace vitest.workspace.ts --coverage",
     "typecheck": "turbo typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,css,md}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,json,css,md}\" --ignore-path .gitignore",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo build --filter=!docs --filter=!playground && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.0",
+    "prettier": "^3.2.0",
     "turbo": "^2.3.0",
-    "typescript": "^5.4.0"
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {

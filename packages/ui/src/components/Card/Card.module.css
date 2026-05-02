@@ -1,0 +1,27 @@
+.root {
+  background: var(--synerity-color-surface);
+  border: 1px solid var(--synerity-color-border);
+  border-radius: var(--synerity-radius-xl);
+  overflow: hidden;
+  font-family: var(--synerity-font-sans);
+}
+
+.sm  { box-shadow: var(--synerity-shadow-xs); }
+.md  { box-shadow: var(--synerity-shadow-sm); }
+.lg  { box-shadow: var(--synerity-shadow-md); }
+.none { box-shadow: none; }
+
+.header {
+  padding: var(--synerity-space-4) var(--synerity-space-5);
+  border-bottom: 1px solid var(--synerity-color-border);
+}
+
+.body {
+  padding: var(--synerity-space-5);
+}
+
+.footer {
+  padding: var(--synerity-space-4) var(--synerity-space-5);
+  border-top: 1px solid var(--synerity-color-border);
+  background: var(--synerity-color-surface-raised);
+}

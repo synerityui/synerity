@@ -1,0 +1,70 @@
+.root { font-family: var(--synerity-font-sans); }
+
+/* ── Variants ──────────────────────────────────────────────── */
+/* Line (default) */
+.tablist {
+  display: flex;
+  border-bottom: 2px solid var(--synerity-color-border);
+  gap: var(--synerity-space-1);
+}
+
+.tab {
+  padding: var(--synerity-space-2) var(--synerity-space-4);
+  font-size: var(--synerity-text-sm);
+  font-weight: var(--synerity-weight-medium);
+  color: var(--synerity-color-text-secondary);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  border-radius: var(--synerity-radius-md) var(--synerity-radius-md) 0 0;
+  transition:
+    color var(--synerity-duration-fast) var(--synerity-easing-default),
+    border-color var(--synerity-duration-fast) var(--synerity-easing-default);
+  outline: none;
+}
+
+.tab:hover { color: var(--synerity-color-text-primary); }
+
+.tab:focus-visible {
+  box-shadow: 0 0 0 2px var(--synerity-color-focus-ring);
+}
+
+.tabSelected {
+  color: var(--synerity-color-primary);
+  border-bottom-color: var(--synerity-color-primary);
+}
+
+.tab:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.panel {
+  padding: var(--synerity-space-4) 0;
+  color: var(--synerity-color-text-primary);
+  font-size: var(--synerity-text-md);
+}
+
+/* Pills variant */
+.pills .tablist {
+  border-bottom: none;
+  background: var(--synerity-color-surface-raised);
+  border-radius: var(--synerity-radius-lg);
+  padding: var(--synerity-space-1);
+  gap: var(--synerity-space-0\.5);
+  display: inline-flex;
+}
+
+.pills .tab {
+  border-bottom: none;
+  border-radius: var(--synerity-radius-md);
+  margin: 0;
+}
+
+.pills .tabSelected {
+  background: var(--synerity-color-surface);
+  color: var(--synerity-color-text-primary);
+  box-shadow: var(--synerity-shadow-sm);
+}

@@ -1,8 +1,14 @@
 {
   "name": "@synerity/ui",
   "version": "0.0.1",
-  "description": "Synerity UI — styled component library with zero-runtime CSS",
-  "keywords": ["react", "ui", "components", "design-system", "typescript"],
+  "description": "Synerity UI \u2014 styled component library with zero-runtime CSS",
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "design-system",
+    "typescript"
+  ],
   "license": "MIT",
   "homepage": "https://synerity.dev",
   "repository": {
@@ -13,31 +19,50 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "style": "./dist/index.css",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
+      "require": "./dist/index.js"
+    },
+    "./styles": "./dist/index.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "lint": "eslint src",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
-  "devDependencies": {
-    "@synerity/tsconfig": "workspace:*",
-    "tsup": "^8.0.0",
-    "typescript": "^5.4.0"
-  },
   "dependencies": {
     "@synerity/headless": "workspace:*",
-    "@synerity/tokens": "workspace:*"
+    "@synerity/tokens": "workspace:*",
+    "clsx": "^2.1.0"
+  },
+  "devDependencies": {
+    "@synerity/eslint-config": "workspace:*",
+    "@synerity/tsconfig": "workspace:*",
+    "@testing-library/jest-dom": "^6.4.0",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "jest-axe": "^8.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "jsdom": "^24.0.0"
   }
 }

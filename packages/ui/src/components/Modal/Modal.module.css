@@ -1,0 +1,89 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--synerity-color-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--synerity-space-4);
+  z-index: var(--synerity-z-modal);
+  animation: syn-fade-in var(--synerity-duration-normal) var(--synerity-easing-out);
+}
+
+.dialog {
+  background: var(--synerity-color-surface);
+  border-radius: var(--synerity-radius-xl);
+  box-shadow: var(--synerity-shadow-xl);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - var(--synerity-space-16));
+  width: 100%;
+  animation: syn-slide-up var(--synerity-duration-normal) var(--synerity-easing-out);
+  outline: none;
+  font-family: var(--synerity-font-sans);
+}
+
+.sm  { max-width: 24rem; }
+.md  { max-width: 32rem; }
+.lg  { max-width: 42rem; }
+.xl  { max-width: 56rem; }
+.full { max-width: 100%; height: 100%; border-radius: 0; }
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--synerity-space-5) var(--synerity-space-6);
+  border-bottom: 1px solid var(--synerity-color-border);
+  gap: var(--synerity-space-4);
+}
+
+.title {
+  font-size: var(--synerity-text-lg);
+  font-weight: var(--synerity-weight-semibold);
+  color: var(--synerity-color-text-primary);
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--synerity-color-text-secondary);
+  padding: var(--synerity-space-1);
+  border-radius: var(--synerity-radius-md);
+  line-height: 1;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  transition: color var(--synerity-duration-fast) var(--synerity-easing-default);
+}
+.closeBtn:hover { color: var(--synerity-color-text-primary); }
+.closeBtn:focus-visible { box-shadow: 0 0 0 3px var(--synerity-color-focus-ring); outline: none; }
+
+.body {
+  padding: var(--synerity-space-5) var(--synerity-space-6);
+  overflow-y: auto;
+  flex: 1;
+  color: var(--synerity-color-text-secondary);
+  font-size: var(--synerity-text-md);
+  line-height: var(--synerity-leading-relaxed);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--synerity-space-3);
+  padding: var(--synerity-space-4) var(--synerity-space-6);
+  border-top: 1px solid var(--synerity-color-border);
+}
+
+@keyframes syn-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes syn-slide-up {
+  from { transform: translateY(1rem); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}

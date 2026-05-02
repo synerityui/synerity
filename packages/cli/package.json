@@ -1,8 +1,12 @@
 {
   "name": "@synerity/cli",
   "version": "0.0.1",
-  "description": "Synerity CLI — copy-paste component installer",
-  "keywords": ["cli", "components", "scaffolding"],
+  "description": "Synerity CLI \u2014 copy-paste component installer",
+  "keywords": [
+    "cli",
+    "components",
+    "scaffolding"
+  ],
   "license": "MIT",
   "homepage": "https://synerity.dev",
   "repository": {
@@ -14,9 +18,28 @@
     "synerity": "./dist/index.js"
   },
   "main": "./dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "commander": "^12.0.0",
+    "fs-extra": "^11.2.0",
+    "picocolors": "^1.0.0"
+  },
+  "devDependencies": {
+    "@synerity/eslint-config": "workspace:*",
+    "@synerity/tsconfig": "workspace:*",
+    "@types/fs-extra": "^11.0.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
   }
 }

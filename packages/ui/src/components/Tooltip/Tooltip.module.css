@@ -1,0 +1,39 @@
+.tooltip {
+  background: var(--synerity-color-neutral-2);
+  color: var(--synerity-color-text-inverse);
+  font-family: var(--synerity-font-sans);
+  font-size: var(--synerity-text-xs);
+  font-weight: var(--synerity-weight-medium);
+  padding: var(--synerity-space-1) var(--synerity-space-2);
+  border-radius: var(--synerity-radius-md);
+  max-width: 16rem;
+  word-wrap: break-word;
+  pointer-events: none;
+  white-space: pre-line;
+  box-shadow: var(--synerity-shadow-md);
+  z-index: var(--synerity-z-tooltip);
+  animation: syn-tooltip-in var(--synerity-duration-fast) var(--synerity-easing-out);
+}
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltipContainer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: var(--synerity-z-tooltip);
+}
+
+.top    .tooltipContainer { bottom: calc(100% + 6px); }
+.bottom .tooltipContainer { top: calc(100% + 6px); }
+.left   .tooltipContainer { right: calc(100% + 6px); left: auto; transform: none; top: 50%; translate: 0 -50%; }
+.right  .tooltipContainer { left: calc(100% + 6px); transform: none; top: 50%; translate: 0 -50%; }
+
+@keyframes syn-tooltip-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}

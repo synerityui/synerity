@@ -17,8 +17,18 @@
   },
   "files": ["dist"],
   "scripts": {
-    "build": "node scripts/build.js",
-    "dev": "node scripts/build.js --watch",
-    "lint": "eslint scripts"
+    "build": "tsup src/tokens.ts --format cjs --outDir dist --no-dts && node scripts/build.js",
+    "dev": "tsup src/tokens.ts --format cjs --outDir dist --no-dts --watch",
+    "lint": "eslint scripts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@synerity/tsconfig": "workspace:*",
+    "@vitest/coverage-v8": "^1.6.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
   }
 }

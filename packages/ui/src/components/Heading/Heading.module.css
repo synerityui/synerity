@@ -1,0 +1,14 @@
+.root {
+  font-family: var(--synerity-font-sans);
+  margin: 0;
+  color: var(--synerity-color-text-primary);
+  line-height: var(--synerity-leading-tight);
+  font-weight: var(--synerity-weight-bold);
+}
+
+.1 { font-size: var(--synerity-text-4xl); letter-spacing: var(--synerity-tracking-tight); }
+.2 { font-size: var(--synerity-text-3xl); letter-spacing: var(--synerity-tracking-tight); }
+.3 { font-size: var(--synerity-text-2xl); }
+.4 { font-size: var(--synerity-text-xl); }
+.5 { font-size: var(--synerity-text-lg); font-weight: var(--synerity-weight-semibold); }
+.6 { font-size: var(--synerity-text-md); font-weight: var(--synerity-weight-semibold); }
