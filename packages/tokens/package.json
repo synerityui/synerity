@@ -1,0 +1,24 @@
+{
+  "name": "@synerity/tokens",
+  "version": "0.0.1",
+  "description": "Synerity Tokens — design tokens and CSS custom properties",
+  "keywords": ["design-tokens", "css-variables", "theming", "design-system"],
+  "license": "MIT",
+  "homepage": "https://synerity.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synerityui/synerity.git",
+    "directory": "packages/tokens"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./css": "./dist/tokens.css"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/build.js --watch",
+    "lint": "eslint scripts"
+  }
+}

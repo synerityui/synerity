@@ -1,0 +1,43 @@
+{
+  "name": "@synerity/ui",
+  "version": "0.0.1",
+  "description": "Synerity UI — styled component library with zero-runtime CSS",
+  "keywords": ["react", "ui", "components", "design-system", "typescript"],
+  "license": "MIT",
+  "homepage": "https://synerity.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synerityui/synerity.git",
+    "directory": "packages/ui"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@synerity/tsconfig": "workspace:*",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "@synerity/headless": "workspace:*",
+    "@synerity/tokens": "workspace:*"
+  }
+}

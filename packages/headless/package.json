@@ -1,0 +1,39 @@
+{
+  "name": "@synerity/headless",
+  "version": "0.0.1",
+  "description": "Synerity Headless — logic and accessibility primitives, zero CSS",
+  "keywords": ["react", "headless", "a11y", "accessibility", "primitives", "typescript"],
+  "license": "MIT",
+  "homepage": "https://synerity.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synerityui/synerity.git",
+    "directory": "packages/headless"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@synerity/tsconfig": "workspace:*",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  }
+}

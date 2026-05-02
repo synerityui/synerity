@@ -1,0 +1,31 @@
+{
+  "name": "@synerity/icons",
+  "version": "0.0.1",
+  "description": "Synerity Icons — fully tree-shakeable icon set",
+  "keywords": ["icons", "svg", "react", "tree-shakeable"],
+  "license": "MIT",
+  "homepage": "https://synerity.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synerityui/synerity.git",
+    "directory": "packages/icons"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@synerity/forms",
+  "version": "0.0.1",
+  "description": "Synerity Forms — form primitives with built-in validation",
+  "keywords": ["react", "forms", "validation", "typescript"],
+  "license": "MIT",
+  "homepage": "https://synerity.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synerityui/synerity.git",
+    "directory": "packages/forms"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "@synerity/headless": "workspace:*"
+  }
+}

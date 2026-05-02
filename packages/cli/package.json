@@ -1,0 +1,22 @@
+{
+  "name": "@synerity/cli",
+  "version": "0.0.1",
+  "description": "Synerity CLI — copy-paste component installer",
+  "keywords": ["cli", "components", "scaffolding"],
+  "license": "MIT",
+  "homepage": "https://synerity.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synerityui/synerity.git",
+    "directory": "packages/cli"
+  },
+  "bin": {
+    "synerity": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  }
+}
