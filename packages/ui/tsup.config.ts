@@ -8,7 +8,5 @@ export default defineConfig({
   clean: true,
   treeshake: true,
   external: ["react", "react-dom"],
-  loader: {
-    ".module.css": "local-css",
-  },
+  injectStyle: true,
 });

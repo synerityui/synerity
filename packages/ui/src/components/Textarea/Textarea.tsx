@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import clsx from "clsx";
 import { useTextarea } from "@synerity/headless";
 
-import styles from "./Textarea.module.css";
+import * as styles from "./Textarea.module.css";
 
 export type TextareaProps = {
   label?: string;

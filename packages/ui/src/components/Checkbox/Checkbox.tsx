@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import clsx from "clsx";
 import { useCheckbox } from "@synerity/headless";
 
-import styles from "./Checkbox.module.css";
+import * as styles from "./Checkbox.module.css";
 
 export type CheckboxProps = {
   label?: React.ReactNode;

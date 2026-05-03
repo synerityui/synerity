@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import styles from "./Spinner.module.css";
+import * as styles from "./Spinner.module.css";
 
 export type SpinnerSize = "xs" | "sm" | "md" | "lg" | "xl";
 

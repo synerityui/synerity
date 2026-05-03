@@ -1,5 +1,13 @@
 # @synerity/ui
 
+## 0.1.1
+
+### Patch Changes
+
+- Fix CSS not applying when installed from npm.
+
+  Switched from esbuild `local-css` loader (which generated empty class name objects) to `injectStyle: true`, which bundles all component styles into the JS bundle and injects them via a style tag at runtime. Also added `css-modules.d.ts` for correct TypeScript types on CSS Module namespace imports.
+
 ## 0.1.0
 
 ### Minor Changes

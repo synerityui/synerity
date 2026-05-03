@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useAccordion } from "@synerity/headless";
 
-import styles from "./Accordion.module.css";
+import * as styles from "./Accordion.module.css";
 
 type AccordionType = "single" | "multiple";
 

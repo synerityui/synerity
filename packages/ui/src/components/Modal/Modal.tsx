@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import clsx from "clsx";
 import { useDialog } from "@synerity/headless";
 
-import styles from "./Modal.module.css";
+import * as styles from "./Modal.module.css";
 
 export type ModalSize = "sm" | "md" | "lg" | "xl" | "full";
 

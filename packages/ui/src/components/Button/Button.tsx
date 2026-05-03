@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import clsx from "clsx";
 import { useButton } from "@synerity/headless";
 
-import styles from "./Button.module.css";
+import * as styles from "./Button.module.css";
 
 export type ButtonVariant = "solid" | "outline" | "ghost" | "link";
 export type ButtonSize = "sm" | "md" | "lg";

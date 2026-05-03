@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useTooltip } from "@synerity/headless";
 
-import styles from "./Tooltip.module.css";
+import * as styles from "./Tooltip.module.css";
 
 export type TooltipPlacement = "top" | "bottom" | "left" | "right";
 

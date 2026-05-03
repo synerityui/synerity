@@ -1,7 +1,7 @@
 import { forwardRef, useState } from "react";
 import clsx from "clsx";
 
-import styles from "./Avatar.module.css";
+import * as styles from "./Avatar.module.css";
 
 export type AvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 
