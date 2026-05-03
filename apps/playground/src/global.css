@@ -1,17 +1,16 @@
 /* ── Reset ─────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Design system tokens (--syn-*) ────────────────────────────────────────── */
-/* Applied on top of @synerity/tokens to give the playground its branded look. */
+/* ── Design system tokens ─────────────────────────────────────────────────── */
+/* The --syn-* layer drives the playground shell.                              */
+/* The --synerity-* overrides make UI components match the design system too.  */
 :root {
+  /* Shell tokens */
   --syn-primary-h: 160;
   --syn-primary: oklch(0.68 0.15 var(--syn-primary-h));
   --syn-primary-hover: oklch(0.62 0.16 var(--syn-primary-h));
   --syn-primary-fg: oklch(0.99 0 0);
   --syn-primary-subtle: oklch(0.96 0.04 var(--syn-primary-h));
-
-  --syn-n-11: oklch(0.16 0.014 240);
-  --syn-n-12: oklch(0.1 0.012 240);
 
   --syn-font-sans: "Geist", "Inter", system-ui, sans-serif;
   --syn-font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
@@ -22,9 +21,53 @@
   --syn-bg: oklch(1 0 0);
   --syn-bg-raised: oklch(0.985 0.002 240);
   --syn-bg-sunken: oklch(0.965 0.003 240);
+
+  /* Override @synerity/tokens so UI components adopt the design system values */
+  --synerity-color-primary: oklch(0.68 0.15 160);
+  --synerity-color-primary-hover: oklch(0.62 0.16 160);
+  --synerity-color-primary-active: oklch(0.55 0.17 160);
+  --synerity-color-primary-subtle: oklch(0.96 0.04 160);
+  --synerity-color-primary-subtle-hover: oklch(0.93 0.06 160);
+  --synerity-color-text-on-primary: oklch(0.99 0 0);
+  --synerity-color-border-focus: oklch(0.68 0.15 160);
+  --synerity-color-focus-ring: oklch(0.68 0.15 160 / 0.35);
+
+  /* Surface & neutrals — oklch warm-cool slate matching the design */
+  --synerity-color-surface: oklch(1 0 0);
+  --synerity-color-surface-raised: oklch(0.985 0.002 240);
+  --synerity-color-surface-overlay: oklch(0.965 0.003 240);
+  --synerity-color-border: oklch(0.93 0.005 240);
+  --synerity-color-border-strong: oklch(0.88 0.007 240);
+  --synerity-color-text-primary: oklch(0.16 0.014 240);
+  --synerity-color-text-secondary: oklch(0.52 0.011 240);
+  --synerity-color-text-disabled: oklch(0.78 0.009 240);
+
+  /* Typography — Geist */
+  --synerity-font-sans: "Geist", "Inter", system-ui, sans-serif;
+  --synerity-font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  /* Spacing — tighter scale matching the design's 4px grid */
+  --synerity-space-1: 4px;
+  --synerity-space-2: 8px;
+  --synerity-space-3: 12px;
+  --synerity-space-4: 16px;
+  --synerity-space-6: 24px;
+  --synerity-space-8: 32px;
+
+  /* Radius — matching design tokens */
+  --synerity-radius-sm: 4px;
+  --synerity-radius-md: 6px;
+  --synerity-radius-lg: 8px;
+  --synerity-radius-xl: 12px;
+
+  /* Shadows — design system elevation */
+  --synerity-shadow-sm: 0 1px 2px oklch(0.15 0.013 240 / 0.06), 0 1px 1px oklch(0.15 0.013 240 / 0.04);
+  --synerity-shadow-md: 0 4px 8px -2px oklch(0.15 0.013 240 / 0.08), 0 2px 4px -1px oklch(0.15 0.013 240 / 0.04);
+  --synerity-shadow-lg: 0 12px 24px -6px oklch(0.15 0.013 240 / 0.1), 0 4px 8px -2px oklch(0.15 0.013 240 / 0.06);
 }
 
 [data-theme="dark"] {
+  /* Shell */
   --syn-border: oklch(0.24 0.014 240);
   --syn-text: oklch(0.97 0.003 240);
   --syn-text-muted: oklch(0.66 0.011 240);
@@ -33,6 +76,19 @@
   --syn-bg-sunken: oklch(0.19 0.014 240);
   --syn-primary: oklch(0.72 0.14 var(--syn-primary-h));
   --syn-primary-subtle: oklch(0.28 0.06 var(--syn-primary-h));
+
+  /* Component token overrides for dark mode */
+  --synerity-color-primary: oklch(0.72 0.14 160);
+  --synerity-color-primary-hover: oklch(0.78 0.14 160);
+  --synerity-color-primary-subtle: oklch(0.28 0.06 160);
+  --synerity-color-surface: oklch(0.13 0.012 240);
+  --synerity-color-surface-raised: oklch(0.16 0.013 240);
+  --synerity-color-surface-overlay: oklch(0.19 0.014 240);
+  --synerity-color-border: oklch(0.24 0.014 240);
+  --synerity-color-border-strong: oklch(0.3 0.014 240);
+  --synerity-color-text-primary: oklch(0.97 0.003 240);
+  --synerity-color-text-secondary: oklch(0.66 0.011 240);
+  --synerity-color-text-disabled: oklch(0.4 0.013 240);
 }
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
@@ -229,12 +285,12 @@ code, pre, kbd {
 .pg-home-hero { margin-bottom: 48px; }
 
 .pg-home-title {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 600;
   letter-spacing: -0.03em;
   color: var(--syn-text);
-  line-height: 1.2;
-  margin-bottom: 8px;
+  line-height: 1.1;
+  margin-bottom: 10px;
 }
 
 .pg-home-subtitle {
@@ -321,13 +377,25 @@ code, pre, kbd {
 .pg-demo-section { margin-bottom: 40px; }
 
 .pg-demo-section-title {
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 600;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--syn-text-muted);
   font-family: var(--syn-font-mono);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pg-demo-section-title::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--syn-primary);
+  flex-shrink: 0;
 }
 
 .pg-demo-preview {
