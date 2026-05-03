@@ -10,7 +10,7 @@
 
 Synerity is a React UI component library built as a pnpm monorepo (Turborepo). The architecture is a two-layer model: `@synerity/headless` owns all logic, state, and accessibility; `@synerity/ui` applies a token-driven visual skin on top. Supporting packages cover design tokens, icons, forms, a copy-paste CLI installer, and `@synerity/memory-graph` — a zero-dependency TypeScript utility for LLM context management via in-memory knowledge graphs.
 
-**Current state:** Phases 0–3 are complete (monorepo bootstrap, tokens, headless hooks, UI components). Phases 4–10 are pending.
+**Current state:** Phases 0–8 are complete. Phases 9–10 are pending.
 
 ---
 
@@ -1095,13 +1095,13 @@ Test matrix:
 | 1 | `@synerity/tokens` | Phase 0 | ✅ Done | 1–2 days |
 | 2 | `@synerity/headless` | Phase 0 | ✅ Done | 2–3 weeks |
 | 3 | `@synerity/ui` | Phases 1, 2 | ✅ Done | 3–4 weeks |
-| 4 | `@synerity/forms` | Phase 2 | Pending | 1 week |
-| 5 | `@synerity/icons` | Phase 0 | Pending | 3–5 days |
-| 6 | `@synerity/cli` | Phases 3, 5 | Pending | 1 week |
-| 7 | `@synerity/memory-graph` | Phase 0 (standalone) | Pending | 1–2 weeks |
-| 8 | `apps/playground` | Phases 3, 4, 5, 7 | Pending | 1 week |
-| 9 | `apps/docs` | All packages | Pending | 2–3 weeks |
-| 10 | Quality & release | All | Pending | 1–2 weeks |
+| 4 | `@synerity/forms` | Phase 2 | ✅ Done | 1 week |
+| 5 | `@synerity/icons` | Phase 0 | ✅ Done | 3–5 days |
+| 6 | `@synerity/cli` | Phases 3, 5 | ✅ Done | 1 week |
+| 7 | `@synerity/memory-graph` | Phase 0 (standalone) | ✅ Done | 1–2 weeks |
+| 8 | `apps/playground` | Phases 3, 4, 5, 7 | ✅ Done | 1 week |
+| 9 | `apps/docs` | All packages | 🔲 Pending | 2–3 weeks |
+| 10 | Quality & release | All | 🔲 Pending | 1–2 weeks |
 
 **Total estimated: 14–18 weeks for v1.0** (2 weeks added for memory-graph)
 
