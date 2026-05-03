@@ -32,20 +32,12 @@ export default function ComponentsIndexPage() {
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10 }}>
               {items.map((c) => (
-                <Link key={c.slug} href={`/docs/components/${c.slug}`} style={{
+                <Link key={c.slug} href={`/docs/components/${c.slug}`} className="hover-primary-border" style={{
                   padding: "14px 18px", borderRadius: "var(--syn-radius-lg)",
                   background: "var(--syn-bg-raised)", border: "1px solid var(--syn-border)",
                   textDecoration: "none", display: "block",
                   transition: "border-color 120ms ease, box-shadow 120ms ease",
                 }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "var(--syn-primary)";
-                    e.currentTarget.style.boxShadow = "var(--syn-shadow-sm)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "var(--syn-border)";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
                 >
                   <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4 }}>{c.name}</div>
                   <div style={{ fontSize: 12, color: "var(--syn-text-muted)", lineHeight: 1.45, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>

@@ -124,20 +124,12 @@ export default function HomePage() {
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 12 }}>
           {PACKAGES.map((p) => (
-            <Link key={p.name} href={p.href} style={{
+            <Link key={p.name} href={p.href} className="hover-primary-border" style={{
               display: "block", padding: "16px 20px",
               background: "var(--syn-bg-raised)", border: "1px solid var(--syn-border)",
               borderRadius: "var(--syn-radius-lg)", textDecoration: "none",
               transition: "border-color 150ms ease, box-shadow 150ms ease",
             }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "var(--syn-primary)";
-                e.currentTarget.style.boxShadow = "var(--syn-shadow-md)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "var(--syn-border)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
             >
               <div style={{ fontFamily: "var(--syn-font-mono)", fontSize: 12, color: "var(--syn-primary)", marginBottom: 4 }}>
                 {p.name}

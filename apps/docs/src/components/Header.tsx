@@ -29,14 +29,11 @@ export function Header() {
           { href: "/docs/components", label: "Components" },
           { href: "/docs/icons", label: "Icons" },
         ].map(({ href, label }) => (
-          <Link key={href} href={href} style={{
+          <Link key={href} href={href} className="hover-text" style={{
             padding: "6px 12px", fontSize: 14, fontWeight: 500,
             color: "var(--syn-text-muted)", borderRadius: "var(--syn-radius-md)",
             transition: "color 120ms ease",
-          }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--syn-text)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--syn-text-muted)")}
-          >
+          }}>
             {label}
           </Link>
         ))}
