@@ -36,7 +36,8 @@ code, pre, kbd {
 /* ── Sidebar ───────────────────────────────────────────────────────────────── */
 .pg-sidebar {
   grid-row: 1 / -1;
-  background: var(--synerity-color-neutral-11, #1a1a2e);
+  /* Intentionally hardcoded — sidebar is always dark regardless of theme */
+  background: #0f172a;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
   overflow-y: auto;
   overflow-x: hidden;
@@ -45,7 +46,7 @@ code, pre, kbd {
 }
 
 [data-theme="dark"] .pg-sidebar {
-  background: #0d0d1a;
+  background: #080f1e;
 }
 
 .pg-sidebar-logo {
@@ -333,11 +334,11 @@ code, pre, kbd {
   align-items: center;
   justify-content: space-between;
   padding: 8px 16px;
-  background: var(--synerity-color-neutral-11, #1a1a2e);
+  background: #0f172a;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-[data-theme="dark"] .pg-code-block-header { background: #0d0d1a; }
+[data-theme="dark"] .pg-code-block-header { background: #080f1e; }
 
 .pg-code-block-lang {
   font-size: 10px;
