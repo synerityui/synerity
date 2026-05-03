@@ -110,6 +110,52 @@ importers:
         specifier: ^5.4.0
         version: 5.4.21(@types/node@20.19.39)
 
+  apps/sample:
+    dependencies:
+      '@synerity/forms':
+        specifier: 0.1.0
+        version: 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)
+      '@synerity/icons':
+        specifier: 0.1.0
+        version: 0.1.0(react@18.3.1)
+      '@synerity/memory-graph':
+        specifier: 0.1.0
+        version: 0.1.0
+      '@synerity/tokens':
+        specifier: 0.1.0
+        version: 0.1.0
+      '@synerity/ui':
+        specifier: 0.1.0
+        version: 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react:
+        specifier: ^18.3.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.0
+        version: 18.3.1(react@18.3.1)
+      zod:
+        specifier: ^3.23.0
+        version: 3.25.76
+    devDependencies:
+      '@synerity/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      '@types/react':
+        specifier: ^18.3.0
+        version: 18.3.28
+      '@types/react-dom':
+        specifier: ^18.3.0
+        version: 18.3.7(@types/react@18.3.28)
+      '@vitejs/plugin-react':
+        specifier: ^4.3.0
+        version: 4.7.0(vite@5.4.21(@types/node@20.19.39))
+      typescript:
+        specifier: ^5.4.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.4.0
+        version: 5.4.21(@types/node@20.19.39)
+
   packages/cli:
     dependencies:
       '@clack/prompts':
@@ -1362,6 +1408,39 @@ packages:
 
   '@swc/helpers@0.5.5':
     resolution: {integrity: sha512-KGYxvIOXcceOAbEk4bi/dVLEK9z8sZ0uBB3Il5b1rhfClSpcX0yfRO0KmTkqR2cnQDymwLB+25ZyMzICg/cm/A==}
+
+  '@synerity/forms@0.1.0':
+    resolution: {integrity: sha512-C3HcuFTETdW1uLLWjDnCXHXNO/rHXbi4B9AXok7fzfErh+xmey01qPSNcgqpPtJIxWA9CfUvPJyYXiTYUbN4gQ==}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+      zod: '>=3.0.0'
+    peerDependenciesMeta:
+      zod:
+        optional: true
+
+  '@synerity/headless@0.1.0':
+    resolution: {integrity: sha512-mM5sQ6M5rZ9QxG1dUUax0CfFuNYc+5cZtdkduNzys68LtbIdVvjy40yecE7JldSOLcrId/zWs55IdvQncodjiQ==}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+
+  '@synerity/icons@0.1.0':
+    resolution: {integrity: sha512-1HchwsXq6rDOvOd53/aD1JuRPThOpfh4kQWiNJRmk44feRzCrjbahcU3JGYJfm4TYekPrGW1gjUPQ0uHqRX83Q==}
+    peerDependencies:
+      react: '>=18.0.0'
+
+  '@synerity/memory-graph@0.1.0':
+    resolution: {integrity: sha512-EhMhbILK/pHjnAr+bNL1d4ZYqkmFtqIJEIc9QsfKDwUZ6wcxLHdD8L6C2Uu0Tjuqh/pFHsxIYlk2BE3p7DkPdQ==}
+
+  '@synerity/tokens@0.1.0':
+    resolution: {integrity: sha512-Qf3gVf+cHilcEsvJLoQ0dxTNWVUdEP533C8feNIPMD+kjpIqC3ouQMjQ7n3lPiKr+3wCjULq120n9AzXquOFWQ==}
+
+  '@synerity/ui@0.1.0':
+    resolution: {integrity: sha512-6vwf7fY66wBZSQMehuIwGXbpd86DuGtuBoWL2G190ji+iDlbMay80ktAgqbMM6s8+feC1J4JN6yfA4ex8rgrow==}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
 
   '@testing-library/dom@10.4.1':
     resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
@@ -4279,6 +4358,35 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
       tslib: 2.8.1
+
+  '@synerity/forms@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)':
+    dependencies:
+      '@synerity/headless': 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      zod: 3.25.76
+
+  '@synerity/headless@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@synerity/icons@0.1.0(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+
+  '@synerity/memory-graph@0.1.0': {}
+
+  '@synerity/tokens@0.1.0': {}
+
+  '@synerity/ui@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@synerity/headless': 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@synerity/tokens': 0.1.0
+      clsx: 2.1.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@testing-library/dom@10.4.1':
     dependencies:
