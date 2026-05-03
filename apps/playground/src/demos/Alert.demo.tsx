@@ -7,7 +7,7 @@ export function AlertDemo() {
       <DemoSection
         title="Variants"
         col
-        code={`<Alert variant="info" title="Info">Your account has been updated.</Alert>\n<Alert variant="success" title="Success">Changes saved successfully.</Alert>\n<Alert variant="warning" title="Warning">Your plan expires in 3 days.</Alert>\n<Alert variant="error" title="Error">Failed to save. Please try again.</Alert>`}
+        code={`<Alert variant="info" title="Info">Your account has been updated.</Alert>\n<Alert variant="success" title="Success">Changes saved successfully.</Alert>\n<Alert variant="warning" title="Warning">Your plan expires in 3 days.</Alert>\n<Alert variant="danger" title="Error">Failed to save. Please try again.</Alert>`}
       >
         <Alert variant="info" title="Info">
           Your account has been updated.
@@ -18,7 +18,7 @@ export function AlertDemo() {
         <Alert variant="warning" title="Warning">
           Your plan expires in 3 days.
         </Alert>
-        <Alert variant="error" title="Error">
+        <Alert variant="danger" title="Error">
           Failed to save. Please try again.
         </Alert>
       </DemoSection>

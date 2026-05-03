@@ -9,7 +9,7 @@ export function TabsDemo() {
         col
         code={`<Tabs defaultValue="overview" variant="line">\n  <TabList>\n    <Tab value="overview">Overview</Tab>\n    <Tab value="analytics">Analytics</Tab>\n    <Tab value="settings">Settings</Tab>\n  </TabList>\n  <TabPanel value="overview">Overview content</TabPanel>\n  …\n</Tabs>`}
       >
-        {(["line", "solid", "pills"] as const).map((variant) => (
+        {(["line", "pills"] as const).map((variant) => (
           <div key={variant} style={{ width: "100%" }}>
             <div style={{ fontSize: 11, fontFamily: "IBM Plex Mono, monospace", color: "var(--synerity-color-text-secondary)", marginBottom: 8 }}>
               variant="{variant}"

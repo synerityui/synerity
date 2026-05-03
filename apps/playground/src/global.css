@@ -1,19 +1,50 @@
 /* ── Reset ─────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Tokens ────────────────────────────────────────────────────────────────── */
-/* Imported in main.tsx via @synerity/tokens/css package export */
+/* ── Design system tokens (--syn-*) ────────────────────────────────────────── */
+/* Applied on top of @synerity/tokens to give the playground its branded look. */
+:root {
+  --syn-primary-h: 160;
+  --syn-primary: oklch(0.68 0.15 var(--syn-primary-h));
+  --syn-primary-hover: oklch(0.62 0.16 var(--syn-primary-h));
+  --syn-primary-fg: oklch(0.99 0 0);
+  --syn-primary-subtle: oklch(0.96 0.04 var(--syn-primary-h));
+
+  --syn-n-11: oklch(0.16 0.014 240);
+  --syn-n-12: oklch(0.1 0.012 240);
+
+  --syn-font-sans: "Geist", "Inter", system-ui, sans-serif;
+  --syn-font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  --syn-border: oklch(0.93 0.005 240);
+  --syn-text: oklch(0.16 0.014 240);
+  --syn-text-muted: oklch(0.52 0.011 240);
+  --syn-bg: oklch(1 0 0);
+  --syn-bg-raised: oklch(0.985 0.002 240);
+  --syn-bg-sunken: oklch(0.965 0.003 240);
+}
+
+[data-theme="dark"] {
+  --syn-border: oklch(0.24 0.014 240);
+  --syn-text: oklch(0.97 0.003 240);
+  --syn-text-muted: oklch(0.66 0.011 240);
+  --syn-bg: oklch(0.13 0.012 240);
+  --syn-bg-raised: oklch(0.16 0.013 240);
+  --syn-bg-sunken: oklch(0.19 0.014 240);
+  --syn-primary: oklch(0.72 0.14 var(--syn-primary-h));
+  --syn-primary-subtle: oklch(0.28 0.06 var(--syn-primary-h));
+}
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
 html { height: 100%; }
 
 body {
   height: 100%;
-  font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  font-family: var(--syn-font-sans);
   font-size: 14px;
   line-height: 1.5;
-  background: var(--synerity-color-surface);
-  color: var(--synerity-color-text-primary);
+  background: var(--syn-bg);
+  color: var(--syn-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,7 +52,7 @@ body {
 #root { height: 100%; }
 
 code, pre, kbd {
-  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-family: var(--syn-font-mono), 'JetBrains Mono', monospace;
 }
 
 /* ── Layout shell ──────────────────────────────────────────────────────────── */
@@ -61,7 +92,7 @@ code, pre, kbd {
 .pg-sidebar-logo-mark {
   width: 28px;
   height: 28px;
-  background: var(--synerity-color-primary);
+  background: var(--syn-primary);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -92,7 +123,7 @@ code, pre, kbd {
   color: rgba(255, 255, 255, 0.35);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--syn-font-mono);
 }
 
 .pg-sidebar-nav { padding: 12px 0 24px; flex: 1; }
@@ -104,7 +135,7 @@ code, pre, kbd {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.25);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--syn-font-mono);
 }
 
 .pg-sidebar-item {
@@ -127,9 +158,9 @@ code, pre, kbd {
 }
 
 .pg-sidebar-item.active {
-  color: #818cf8;
-  background: rgba(99, 102, 241, 0.12);
-  border-left-color: #6366f1;
+  color: var(--syn-primary);
+  background: var(--syn-primary-subtle);
+  border-left-color: var(--syn-primary);
   font-weight: 500;
 }
 
@@ -140,8 +171,8 @@ code, pre, kbd {
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
-  border-bottom: 1px solid var(--synerity-color-border);
-  background: var(--synerity-color-surface);
+  border-bottom: 1px solid var(--syn-border);
+  background: var(--syn-bg);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -152,11 +183,11 @@ code, pre, kbd {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: var(--synerity-color-text-secondary);
+  color: var(--syn-text-muted);
 }
 
 .pg-header-breadcrumb span:last-child {
-  color: var(--synerity-color-text-primary);
+  color: var(--syn-text);
   font-weight: 500;
 }
 
@@ -168,25 +199,25 @@ code, pre, kbd {
   justify-content: center;
   width: 32px;
   height: 32px;
-  border: 1px solid var(--synerity-color-border);
-  border-radius: var(--synerity-radius-md);
+  border: 1px solid var(--syn-border);
+  border-radius: 6px;
   background: transparent;
-  color: var(--synerity-color-text-secondary);
+  color: var(--syn-text-muted);
   cursor: pointer;
   transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
 }
 
 .pg-icon-btn:hover {
-  background: var(--synerity-color-surface-raised);
-  color: var(--synerity-color-text-primary);
-  border-color: var(--synerity-color-neutral-4);
+  background: var(--syn-bg-raised);
+  color: var(--syn-text);
+  border-color: oklch(0.88 0.007 240);
 }
 
 /* ── Main content ──────────────────────────────────────────────────────────── */
 .pg-content {
   grid-column: 2;
   overflow-y: auto;
-  background: var(--synerity-color-surface);
+  background: var(--syn-bg);
 }
 
 /* ── Home page ─────────────────────────────────────────────────────────────── */
@@ -201,14 +232,14 @@ code, pre, kbd {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--synerity-color-text-primary);
+  color: var(--syn-text);
   line-height: 1.2;
   margin-bottom: 8px;
 }
 
 .pg-home-subtitle {
   font-size: 14px;
-  color: var(--synerity-color-text-secondary);
+  color: var(--syn-text-muted);
   max-width: 480px;
   line-height: 1.6;
 }
@@ -220,11 +251,11 @@ code, pre, kbd {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--synerity-color-text-secondary);
-  font-family: 'IBM Plex Mono', monospace;
+  color: var(--syn-text-muted);
+  font-family: var(--syn-font-mono);
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--synerity-color-border);
+  border-bottom: 1px solid var(--syn-border);
 }
 
 .pg-component-grid {
@@ -236,31 +267,31 @@ code, pre, kbd {
 .pg-component-card {
   display: block;
   padding: 20px;
-  border: 1px solid var(--synerity-color-border);
-  border-radius: var(--synerity-radius-lg);
+  border: 1px solid var(--syn-border);
+  border-radius: 8px;
   text-decoration: none;
-  background: var(--synerity-color-surface);
+  background: var(--syn-bg);
   transition: border-color 120ms ease, box-shadow 120ms ease, transform 80ms ease;
   cursor: pointer;
 }
 
 .pg-component-card:hover {
-  border-color: var(--synerity-color-primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+  border-color: var(--syn-primary);
+  box-shadow: 0 0 0 3px var(--syn-primary-subtle);
   transform: translateY(-1px);
 }
 
 .pg-component-card-name {
   font-size: 13px;
   font-weight: 600;
-  color: var(--synerity-color-text-primary);
+  color: var(--syn-text);
   margin-bottom: 4px;
   letter-spacing: -0.01em;
 }
 
 .pg-component-card-desc {
   font-size: 12px;
-  color: var(--synerity-color-text-secondary);
+  color: var(--syn-text-muted);
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -282,7 +313,7 @@ code, pre, kbd {
 
 .pg-component-desc {
   font-size: 14px;
-  color: var(--synerity-color-text-secondary);
+  color: var(--syn-text-muted);
   line-height: 1.6;
 }
 
@@ -294,16 +325,16 @@ code, pre, kbd {
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--synerity-color-text-secondary);
-  font-family: 'IBM Plex Mono', monospace;
+  color: var(--syn-text-muted);
+  font-family: var(--syn-font-mono);
   margin-bottom: 16px;
 }
 
 .pg-demo-preview {
   padding: 32px;
-  border: 1px solid var(--synerity-color-border);
-  border-radius: var(--synerity-radius-lg);
-  background: var(--synerity-color-surface-raised);
+  border: 1px solid var(--syn-border);
+  border-radius: 8px;
+  background: var(--syn-bg-raised);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -323,9 +354,9 @@ code, pre, kbd {
 }
 
 .pg-code-block {
-  border: 1px solid var(--synerity-color-border);
+  border: 1px solid var(--syn-border);
   border-top: none;
-  border-radius: 0 0 var(--synerity-radius-lg) var(--synerity-radius-lg);
+  border-radius: 0 0 8px 8px;
   overflow: hidden;
 }
 
@@ -342,7 +373,7 @@ code, pre, kbd {
 
 .pg-code-block-lang {
   font-size: 10px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--syn-font-mono);
   font-weight: 500;
   color: rgba(255,255,255,0.3);
   letter-spacing: 0.06em;
@@ -351,7 +382,7 @@ code, pre, kbd {
 
 .pg-code-copy-btn {
   font-size: 11px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--syn-font-mono);
   color: rgba(255,255,255,0.4);
   background: transparent;
   border: none;
@@ -375,7 +406,7 @@ code, pre, kbd {
 
 [data-theme="dark"] .pg-code-block pre { background: #0a0a14; }
 
-.pg-code-block code { font-family: 'IBM Plex Mono', monospace; }
+.pg-code-block code { font-family: var(--syn-font-mono); }
 
 /* ── Demo row helpers ──────────────────────────────────────────────────────── */
 .pg-row {
@@ -396,13 +427,13 @@ code, pre, kbd {
 .pg-label {
   font-size: 11px;
   font-weight: 500;
-  color: var(--synerity-color-text-secondary);
-  font-family: 'IBM Plex Mono', monospace;
+  color: var(--syn-text-muted);
+  font-family: var(--syn-font-mono);
   margin-bottom: 8px;
 }
 
 /* ── Scrollbar ─────────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--synerity-color-neutral-4, #e2e8f0); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--synerity-color-neutral-5, #cbd5e1); }
+::-webkit-scrollbar-thumb { background: oklch(0.88 0.007 240); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: oklch(0.78 0.009 240); }

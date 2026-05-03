@@ -17,19 +17,19 @@ export function GroupDemo() {
       </DemoSection>
 
       <DemoSection
-        title="Gap sizes"
+        title="Gap values (accepts any CSS gap)"
         col
-        code={`<Group gap="sm">…</Group>\n<Group gap="md">…</Group>\n<Group gap="lg">…</Group>`}
+        code={`<Group gap="8px">…</Group>\n<Group gap="16px">…</Group>\n<Group gap="24px">…</Group>`}
       >
-        {(["xs", "sm", "md", "lg", "xl"] as const).map((gap) => (
+        {(["4px", "8px", "16px", "24px", "32px"] as const).map((gap) => (
           <div key={gap} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ fontSize: 11, fontFamily: "IBM Plex Mono, monospace", color: "var(--synerity-color-text-secondary)", minWidth: 60 }}>
-              gap="{gap}"
+            <div style={{ fontSize: 11, fontFamily: "IBM Plex Mono, monospace", color: "var(--synerity-color-text-secondary)", minWidth: 40 }}>
+              {gap}
             </div>
             <Group gap={gap}>
-              <Badge colorScheme="primary">Alpha</Badge>
-              <Badge colorScheme="success">Beta</Badge>
-              <Badge colorScheme="warning">Gamma</Badge>
+              <Badge variant="primary">Alpha</Badge>
+              <Badge variant="success">Beta</Badge>
+              <Badge variant="warning">Gamma</Badge>
             </Group>
           </div>
         ))}
@@ -38,11 +38,11 @@ export function GroupDemo() {
       <DemoSection
         title="Wrap"
         col
-        code={`<Group wrap gap="sm">\n  {tags.map(t => <Badge key={t}>{t}</Badge>)}\n</Group>`}
+        code={`<Group wrap gap="8px">\n  {tags.map(t => <Badge key={t}>{t}</Badge>)}\n</Group>`}
       >
-        <Group wrap gap="sm" style={{ maxWidth: 340 }}>
+        <Group wrap gap="8px" style={{ maxWidth: 340 }}>
           {["React", "TypeScript", "CSS Modules", "Vite", "Turborepo", "Vitest", "pnpm", "Changesets"].map((t) => (
-            <Badge key={t} variant="outline">{t}</Badge>
+            <Badge key={t}>{t}</Badge>
           ))}
         </Group>
       </DemoSection>

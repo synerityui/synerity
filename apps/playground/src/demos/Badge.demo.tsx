@@ -5,23 +5,15 @@ export function BadgeDemo() {
   return (
     <>
       <DemoSection
-        title="Variants"
-        code={`<Badge variant="solid">Solid</Badge>\n<Badge variant="subtle">Subtle</Badge>\n<Badge variant="outline">Outline</Badge>`}
+        title="Variants (color)"
+        code={`<Badge>Default</Badge>\n<Badge variant="primary">Primary</Badge>\n<Badge variant="success">Success</Badge>\n<Badge variant="warning">Warning</Badge>\n<Badge variant="danger">Danger</Badge>\n<Badge variant="info">Info</Badge>`}
       >
-        <Badge variant="solid">Solid</Badge>
-        <Badge variant="subtle">Subtle</Badge>
-        <Badge variant="outline">Outline</Badge>
-      </DemoSection>
-
-      <DemoSection
-        title="Color schemes"
-        code={`<Badge colorScheme="primary">Primary</Badge>\n<Badge colorScheme="success">Success</Badge>\n<Badge colorScheme="warning">Warning</Badge>\n<Badge colorScheme="danger">Danger</Badge>\n<Badge colorScheme="neutral">Neutral</Badge>`}
-      >
-        <Badge colorScheme="primary">Primary</Badge>
-        <Badge colorScheme="success">Success</Badge>
-        <Badge colorScheme="warning">Warning</Badge>
-        <Badge colorScheme="danger">Danger</Badge>
-        <Badge colorScheme="neutral">Neutral</Badge>
+        <Badge>Default</Badge>
+        <Badge variant="primary">Primary</Badge>
+        <Badge variant="success">Success</Badge>
+        <Badge variant="warning">Warning</Badge>
+        <Badge variant="danger">Danger</Badge>
+        <Badge variant="info">Info</Badge>
       </DemoSection>
 
       <DemoSection
@@ -34,14 +26,13 @@ export function BadgeDemo() {
       </DemoSection>
 
       <DemoSection
-        title="Subtle variants — all schemes"
-        code={`<Badge variant="subtle" colorScheme="success">Active</Badge>`}
+        title="Dot variant"
+        code={`<Badge dot variant="success">Online</Badge>\n<Badge dot variant="warning">Away</Badge>\n<Badge dot variant="danger">Busy</Badge>`}
       >
-        <Badge variant="subtle" colorScheme="primary">Primary</Badge>
-        <Badge variant="subtle" colorScheme="success">Active</Badge>
-        <Badge variant="subtle" colorScheme="warning">Pending</Badge>
-        <Badge variant="subtle" colorScheme="danger">Cancelled</Badge>
-        <Badge variant="subtle" colorScheme="neutral">Draft</Badge>
+        <Badge dot variant="success">Online</Badge>
+        <Badge dot variant="warning">Away</Badge>
+        <Badge dot variant="danger">Busy</Badge>
+        <Badge dot>Offline</Badge>
       </DemoSection>
     </>
   );

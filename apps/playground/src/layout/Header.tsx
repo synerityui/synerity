@@ -22,13 +22,29 @@ export default function Header() {
         ) : (
           <>
             <span>Components</span>
-            <span style={{ color: "var(--synerity-color-text-secondary)" }}>/</span>
+            <span style={{ color: "var(--syn-text-muted)" }}>/</span>
             <span>{title}</span>
           </>
         )}
       </div>
 
       <div className="pg-header-actions">
+        <a
+          href="/design-system/Synerity Design System.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pg-icon-btn"
+          aria-label="Open design system reference"
+          title="Design system"
+          style={{ width: "auto", padding: "0 10px", fontSize: 12, fontWeight: 500, gap: 6, letterSpacing: "-0.01em" }}
+        >
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          Design system
+        </a>
+
         <button
           className="pg-icon-btn"
           onClick={toggleTheme}

@@ -26,9 +26,9 @@ export function AvatarDemo() {
 
       <DemoSection
         title="Avatar group"
-        code={`<AvatarGroup max={3}>\n  <Avatar name="Alice Chen" />\n  <Avatar name="Bob Smith" />\n  <Avatar name="Carol White" />\n  <Avatar name="David Lee" />\n</AvatarGroup>`}
+        code={`<AvatarGroup>\n  <Avatar name="Alice Chen" />\n  <Avatar name="Bob Smith" />\n  <Avatar name="Carol White" />\n  <Avatar name="David Lee" />\n</AvatarGroup>`}
       >
-        <AvatarGroup max={3}>
+        <AvatarGroup>
           <Avatar name="Alice Chen" />
           <Avatar name="Bob Smith" />
           <Avatar name="Carol White" />

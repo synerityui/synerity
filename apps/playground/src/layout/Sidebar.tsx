@@ -10,11 +10,25 @@ const CATEGORIES: Array<{ key: string; label: string }> = [
   { key: "navigation", label: "Navigation" },
 ];
 
+/** The Synerity logo mark — three circles connected by lines, from the design system. */
+function LogoMark() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" style={{ flexShrink: 0 }}>
+      <circle cx="12" cy="12" r="6" fill="var(--syn-primary)" />
+      <circle cx="28" cy="12" r="6" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.5" />
+      <circle cx="20" cy="28" r="6" fill="rgba(255,255,255,0.85)" />
+      <line x1="12" y1="12" x2="28" y2="12" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
+      <line x1="12" y1="12" x2="20" y2="28" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
+      <line x1="28" y1="12" x2="20" y2="28" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
 export default function Sidebar() {
   return (
     <aside className="pg-sidebar">
       <NavLink to="/" className="pg-sidebar-logo" style={{ textDecoration: "none" }}>
-        <div className="pg-sidebar-logo-mark">S</div>
+        <LogoMark />
         <div className="pg-sidebar-logo-text">
           <span className="pg-sidebar-logo-title">Synerity</span>
           <span className="pg-sidebar-logo-sub">Playground</span>

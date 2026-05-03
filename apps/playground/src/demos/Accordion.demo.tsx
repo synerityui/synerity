@@ -4,21 +4,21 @@ import { DemoSection } from "./shared";
 const items = [
   {
     value: "a11y",
-    trigger: "How does Synerity handle accessibility?",
-    panel:
+    title: "How does Synerity handle accessibility?",
+    content:
       "Every component ships with full ARIA wiring, keyboard navigation per the W3C APG, and focus management. WCAG 2.1 AA compliance is a hard requirement, not an afterthought.",
   },
   {
     value: "rsc",
-    trigger: "Are components compatible with React Server Components?",
-    panel:
+    title: "Are components compatible with React Server Components?",
+    content:
       "Yes. CSS Modules are zero-runtime and RSC-safe. Interactive components use the 'use client' directive only where necessary.",
   },
   {
     value: "tokens",
-    trigger: "How do I customise the design tokens?",
-    panel:
-      "Override any CSS custom property on :root or a scoped selector. The token names follow the --synerity-* convention and are fully documented in the tokens package.",
+    title: "How do I customise the design tokens?",
+    content:
+      "Override any CSS custom property on :root or a scoped selector. Token names follow --synerity-* and are documented in the tokens package.",
   },
 ];
 
@@ -26,31 +26,29 @@ export function AccordionDemo() {
   return (
     <>
       <DemoSection
-        title="Single (default)"
+        title="Single (one open at a time)"
         col
-        code={`<Accordion type="single" defaultValue="a11y">\n  {items.map(item => (\n    <Accordion.Item key={item.value} value={item.value} trigger={item.trigger}>\n      {item.panel}\n    </Accordion.Item>\n  ))}\n</Accordion>`}
+        code={`<Accordion\n  type="single"\n  defaultValue="a11y"\n  items={[\n    { value: "a11y", title: "Accessibility", content: "…" },\n    { value: "rsc", title: "RSC support", content: "…" },\n  ]}\n/>`}
       >
-        <Accordion type="single" defaultValue="a11y" style={{ width: "100%" }}>
-          {items.map((item) => (
-            <Accordion.Item key={item.value} value={item.value} trigger={item.trigger}>
-              {item.panel}
-            </Accordion.Item>
-          ))}
-        </Accordion>
+        <Accordion
+          type="single"
+          defaultValue="a11y"
+          items={items}
+          style={{ width: "100%" }}
+        />
       </DemoSection>
 
       <DemoSection
-        title="Multiple (expand many)"
+        title="Multiple (many open at once)"
         col
-        code={`<Accordion type="multiple" defaultValue={["a11y", "rsc"]}>\n  …\n</Accordion>`}
+        code={`<Accordion\n  type="multiple"\n  defaultValue={["a11y", "rsc"]}\n  items={items}\n/>`}
       >
-        <Accordion type="multiple" defaultValue={["a11y", "rsc"]} style={{ width: "100%" }}>
-          {items.map((item) => (
-            <Accordion.Item key={item.value} value={item.value} trigger={item.trigger}>
-              {item.panel}
-            </Accordion.Item>
-          ))}
-        </Accordion>
+        <Accordion
+          type="multiple"
+          defaultValue={["a11y", "rsc"]}
+          items={items}
+          style={{ width: "100%" }}
+        />
       </DemoSection>
     </>
   );
