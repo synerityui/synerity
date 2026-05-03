@@ -153,15 +153,11 @@ export default function App() {
             <Stack gap="12px">
               <Textarea placeholder="Write a description…" rows={4} />
               <Stack gap="10px">
-                <Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)}>
-                  Accept terms and conditions
-                </Checkbox>
-                <Checkbox indeterminate>Indeterminate state</Checkbox>
-                <Checkbox disabled>Disabled checkbox</Checkbox>
+                <Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)} label="Accept terms and conditions" />
+                <Checkbox indeterminate label="Indeterminate state" />
+                <Checkbox disabled label="Disabled checkbox" />
               </Stack>
-              <Switch checked={switched} onChange={(e) => setSwitched(e.target.checked)}>
-                {switched ? "Notifications on" : "Notifications off"}
-              </Switch>
+              <Switch checked={switched} onChange={(e) => setSwitched(e.target.checked)} label={switched ? "Notifications on" : "Notifications off"} />
             </Stack>
           </div>
         </Section>
