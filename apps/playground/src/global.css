@@ -16,11 +16,68 @@
   --syn-font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
 
   --syn-border: oklch(0.93 0.005 240);
+  --syn-border-strong: oklch(0.88 0.007 240);
   --syn-text: oklch(0.16 0.014 240);
   --syn-text-muted: oklch(0.52 0.011 240);
+  --syn-text-subtle: oklch(0.68 0.009 240);
   --syn-bg: oklch(1 0 0);
   --syn-bg-raised: oklch(0.985 0.002 240);
   --syn-bg-sunken: oklch(0.965 0.003 240);
+
+  /* Neutral ramp — n-0 (lightest) to n-12 (darkest) */
+  --syn-n-0:  oklch(1     0      0);
+  --syn-n-1:  oklch(0.985 0.002 240);
+  --syn-n-2:  oklch(0.965 0.003 240);
+  --syn-n-3:  oklch(0.93  0.005 240);
+  --syn-n-4:  oklch(0.88  0.007 240);
+  --syn-n-5:  oklch(0.82  0.009 240);
+  --syn-n-6:  oklch(0.74  0.010 240);
+  --syn-n-7:  oklch(0.62  0.011 240);
+  --syn-n-8:  oklch(0.50  0.011 240);
+  --syn-n-9:  oklch(0.38  0.012 240);
+  --syn-n-10: oklch(0.28  0.013 240);
+  --syn-n-11: oklch(0.18  0.013 240);
+  --syn-n-12: oklch(0.10  0.010 240);
+
+  /* Semantic color tokens */
+  --syn-success:        oklch(0.62 0.17 145);
+  --syn-success-subtle: oklch(0.96 0.05 145);
+  --syn-warning:        oklch(0.72 0.16 80);
+  --syn-warning-subtle: oklch(0.97 0.04 80);
+  --syn-danger:         oklch(0.60 0.20 25);
+  --syn-danger-subtle:  oklch(0.97 0.04 25);
+  --syn-info:           oklch(0.60 0.18 250);
+  --syn-info-subtle:    oklch(0.96 0.04 250);
+
+  /* Design system extras */
+  --syn-primary-active:       oklch(0.55 0.17 var(--syn-primary-h));
+  --syn-primary-subtle-hover: oklch(0.93 0.06 var(--syn-primary-h));
+
+  /* Radius */
+  --syn-radius-none: 0;
+  --syn-radius-sm:   4px;
+  --syn-radius-md:   6px;
+  --syn-radius-lg:   8px;
+  --syn-radius-xl:   12px;
+  --syn-radius-2xl:  16px;
+  --syn-radius-full: 9999px;
+
+  /* Shadows */
+  --syn-shadow-xs: 0 1px 1px oklch(0.15 0.013 240 / 0.05);
+  --syn-shadow-sm: 0 1px 2px oklch(0.15 0.013 240 / 0.06), 0 1px 1px oklch(0.15 0.013 240 / 0.04);
+  --syn-shadow-md: 0 4px 8px -2px oklch(0.15 0.013 240 / 0.08), 0 2px 4px -1px oklch(0.15 0.013 240 / 0.04);
+  --syn-shadow-lg: 0 12px 24px -6px oklch(0.15 0.013 240 / 0.10), 0 4px 8px -2px oklch(0.15 0.013 240 / 0.06);
+  --syn-shadow-xl: 0 24px 48px -12px oklch(0.15 0.013 240 / 0.14), 0 8px 16px -4px oklch(0.15 0.013 240 / 0.08);
+
+  /* Motion */
+  --syn-dur-fast:   100ms;
+  --syn-dur-normal: 200ms;
+  --syn-dur-slow:   300ms;
+  --syn-dur-slower: 500ms;
+  --syn-ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --syn-ease-in:     cubic-bezier(0.4, 0, 1, 1);
+  --syn-ease-out:    cubic-bezier(0, 0, 0.2, 1);
+  --syn-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Override @synerity/tokens so UI components adopt the design system values */
   --synerity-color-primary: oklch(0.68 0.15 160);
@@ -69,13 +126,41 @@
 [data-theme="dark"] {
   /* Shell */
   --syn-border: oklch(0.24 0.014 240);
+  --syn-border-strong: oklch(0.32 0.014 240);
   --syn-text: oklch(0.97 0.003 240);
   --syn-text-muted: oklch(0.66 0.011 240);
+  --syn-text-subtle: oklch(0.50 0.010 240);
   --syn-bg: oklch(0.13 0.012 240);
   --syn-bg-raised: oklch(0.16 0.013 240);
-  --syn-bg-sunken: oklch(0.19 0.014 240);
+  --syn-bg-sunken: oklch(0.10 0.010 240);
   --syn-primary: oklch(0.72 0.14 var(--syn-primary-h));
-  --syn-primary-subtle: oklch(0.28 0.06 var(--syn-primary-h));
+  --syn-primary-subtle: oklch(0.22 0.06 var(--syn-primary-h));
+  --syn-primary-active: oklch(0.60 0.15 var(--syn-primary-h));
+
+  /* Neutral ramp — dark */
+  --syn-n-0:  oklch(0.10 0.010 240);
+  --syn-n-1:  oklch(0.13 0.012 240);
+  --syn-n-2:  oklch(0.16 0.013 240);
+  --syn-n-3:  oklch(0.21 0.013 240);
+  --syn-n-4:  oklch(0.28 0.013 240);
+  --syn-n-5:  oklch(0.36 0.012 240);
+  --syn-n-6:  oklch(0.46 0.011 240);
+  --syn-n-7:  oklch(0.58 0.010 240);
+  --syn-n-8:  oklch(0.70 0.009 240);
+  --syn-n-9:  oklch(0.80 0.007 240);
+  --syn-n-10: oklch(0.88 0.005 240);
+  --syn-n-11: oklch(0.93 0.004 240);
+  --syn-n-12: oklch(0.97 0.003 240);
+
+  /* Semantic — dark mode */
+  --syn-success:        oklch(0.72 0.16 145);
+  --syn-success-subtle: oklch(0.20 0.07 145);
+  --syn-warning:        oklch(0.80 0.15 80);
+  --syn-warning-subtle: oklch(0.22 0.06 80);
+  --syn-danger:         oklch(0.70 0.19 25);
+  --syn-danger-subtle:  oklch(0.22 0.06 25);
+  --syn-info:           oklch(0.70 0.17 250);
+  --syn-info-subtle:    oklch(0.22 0.06 250);
 
   /* Component token overrides for dark mode */
   --synerity-color-primary: oklch(0.72 0.14 160);
@@ -182,7 +267,13 @@ code, pre, kbd {
   font-family: var(--syn-font-mono);
 }
 
-.pg-sidebar-nav { padding: 12px 0 24px; flex: 1; }
+.pg-sidebar-nav { padding: 12px 0 24px; flex: 1; overflow-y: auto; }
+
+.pg-sidebar-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 12px 20px;
+}
 
 .pg-sidebar-category {
   padding: 16px 20px 6px;

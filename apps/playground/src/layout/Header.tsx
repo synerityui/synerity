@@ -3,9 +3,17 @@ import { useLocation } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 
 function getTitle(pathname: string): string {
-  if (pathname === "/") return "Overview";
-  const slug = pathname.split("/").at(-1) ?? "";
-  return slug.charAt(0).toUpperCase() + slug.slice(1);
+  const parts = pathname.split("/");
+  const slug = parts[parts.length - 1] ?? "";
+  return slug
+    .split("-")
+    .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+function getSection(pathname: string): string {
+  if (pathname.startsWith("/design/")) return "Foundation";
+  return "Components";
 }
 
 export default function Header() {
@@ -13,15 +21,16 @@ export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const title = getTitle(location.pathname);
+  const section = getSection(location.pathname);
 
   return (
     <header className="pg-header">
       <div className="pg-header-breadcrumb">
         {isHome ? (
-          <span>Components</span>
+          <span>Overview</span>
         ) : (
           <>
-            <span>Components</span>
+            <span>{section}</span>
             <span style={{ color: "var(--syn-text-muted)" }}>/</span>
             <span>{title}</span>
           </>

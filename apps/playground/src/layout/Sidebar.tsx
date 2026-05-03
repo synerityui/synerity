@@ -10,6 +10,19 @@ const CATEGORIES: Array<{ key: string; label: string }> = [
   { key: "navigation", label: "Navigation" },
 ];
 
+const FOUNDATION_PAGES = [
+  { slug: "brand", label: "Brand" },
+  { slug: "colors", label: "Colors" },
+  { slug: "typography", label: "Typography" },
+  { slug: "spacing", label: "Spacing & Radius" },
+  { slug: "icons", label: "Iconography" },
+  { slug: "motion", label: "Motion" },
+];
+
+const LIBRARY_PAGES = [
+  { slug: "memory-graph", label: "Memory Graph" },
+];
+
 /** The Synerity logo mark — three circles connected by lines, from the design system. */
 function LogoMark() {
   return (
@@ -36,6 +49,38 @@ export default function Sidebar() {
       </NavLink>
 
       <nav className="pg-sidebar-nav">
+        <div>
+          <div className="pg-sidebar-category">Foundation</div>
+          {FOUNDATION_PAGES.map((p) => (
+            <NavLink
+              key={p.slug}
+              to={`/design/${p.slug}`}
+              className={({ isActive }) =>
+                `pg-sidebar-item${isActive ? " active" : ""}`
+              }
+            >
+              {p.label}
+            </NavLink>
+          ))}
+        </div>
+
+        <div>
+          <div className="pg-sidebar-category">Library</div>
+          {LIBRARY_PAGES.map((p) => (
+            <NavLink
+              key={p.slug}
+              to={`/design/${p.slug}`}
+              className={({ isActive }) =>
+                `pg-sidebar-item${isActive ? " active" : ""}`
+              }
+            >
+              {p.label}
+            </NavLink>
+          ))}
+        </div>
+
+        <div className="pg-sidebar-divider" />
+
         {CATEGORIES.map(({ key, label }) => {
           const items = registry.filter((d) => d.category === key);
           if (items.length === 0) return null;
