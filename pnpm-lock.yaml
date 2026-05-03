@@ -226,6 +226,33 @@ importers:
         specifier: ^1.6.0
         version: 1.6.1(@types/node@20.19.39)(jsdom@24.1.3)
 
+  packages/memory-graph:
+    devDependencies:
+      '@synerity/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@synerity/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.39
+      '@vitest/coverage-v8':
+        specifier: ^1.6.0
+        version: 1.6.1(vitest@1.6.1(@types/node@20.19.39)(jsdom@24.1.3))
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.1
+      tsup:
+        specifier: ^8.0.0
+        version: 8.5.1(postcss@8.5.13)(typescript@5.9.3)
+      typescript:
+        specifier: ^5.4.0
+        version: 5.9.3
+      vitest:
+        specifier: ^1.6.0
+        version: 1.6.1(@types/node@20.19.39)(jsdom@24.1.3)
+
   packages/tokens:
     devDependencies:
       '@synerity/tsconfig':
