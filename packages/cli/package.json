@@ -1,7 +1,7 @@
 {
   "name": "@synerity/cli",
-  "version": "0.0.1",
-  "description": "Synerity CLI \u2014 copy-paste component installer",
+  "version": "0.1.0",
+  "description": "Synerity CLI — copy-paste component installer",
   "keywords": [
     "cli",
     "components",

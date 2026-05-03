@@ -1,7 +1,7 @@
 {
   "name": "@synerity/headless",
-  "version": "0.0.1",
-  "description": "Synerity Headless \u2014 logic and accessibility primitives, zero CSS",
+  "version": "0.1.0",
+  "description": "Synerity Headless — logic and accessibility primitives, zero CSS",
   "keywords": [
     "react",
     "headless",

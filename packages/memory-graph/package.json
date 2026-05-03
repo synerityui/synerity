@@ -1,6 +1,6 @@
 {
   "name": "@synerity/memory-graph",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Zero-dependency in-memory knowledge graph for LLM context management",
   "keywords": [
     "llm",

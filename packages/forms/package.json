@@ -1,7 +1,7 @@
 {
   "name": "@synerity/forms",
-  "version": "0.0.1",
-  "description": "Synerity Forms \u2014 form primitives with built-in validation",
+  "version": "0.1.0",
+  "description": "Synerity Forms — form primitives with built-in validation",
   "keywords": [
     "react",
     "forms",

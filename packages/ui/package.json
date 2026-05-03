@@ -1,7 +1,7 @@
 {
   "name": "@synerity/ui",
-  "version": "0.0.1",
-  "description": "Synerity UI \u2014 styled component library with zero-runtime CSS",
+  "version": "0.1.0",
+  "description": "Synerity UI — styled component library with zero-runtime CSS",
   "keywords": [
     "react",
     "ui",
