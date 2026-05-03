@@ -1,0 +1,44 @@
+[
+  {
+    "name": "@synerity/headless (full)",
+    "path": "packages/headless/dist/index.mjs",
+    "limit": "12 kB"
+  },
+  {
+    "name": "@synerity/ui (full)",
+    "path": "packages/ui/dist/index.mjs",
+    "limit": "40 kB"
+  },
+  {
+    "name": "@synerity/ui — Button only",
+    "path": "packages/ui/dist/index.mjs",
+    "import": "{ Button }",
+    "limit": "3 kB"
+  },
+  {
+    "name": "@synerity/tokens",
+    "path": "packages/tokens/dist/index.js",
+    "limit": "5 kB"
+  },
+  {
+    "name": "@synerity/icons (full)",
+    "path": "packages/icons/dist/index.mjs",
+    "limit": "30 kB"
+  },
+  {
+    "name": "@synerity/icons — single icon",
+    "path": "packages/icons/dist/index.mjs",
+    "import": "{ Check }",
+    "limit": "500 B"
+  },
+  {
+    "name": "@synerity/forms",
+    "path": "packages/forms/dist/index.mjs",
+    "limit": "10 kB"
+  },
+  {
+    "name": "@synerity/memory-graph",
+    "path": "packages/memory-graph/dist/index.mjs",
+    "limit": "8 kB"
+  }
+]
