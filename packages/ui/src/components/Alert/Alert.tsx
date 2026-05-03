@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import * as styles from "./Alert.module.css";
+import styles from "./Alert.module.css";
 
 export type AlertVariant = "info" | "success" | "warning" | "danger";
 

@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import clsx from "clsx";
 
-import * as styles from "./Card.module.css";
+import styles from "./Card.module.css";
 
 export type CardShadow = "none" | "sm" | "md" | "lg";
 

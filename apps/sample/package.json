@@ -1,7 +1,7 @@
 {
   "name": "sample",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
     "@synerity/icons": "0.1.0",
     "@synerity/memory-graph": "0.1.0",
     "@synerity/tokens": "0.1.0",
-    "@synerity/ui": "0.1.1",
+    "@synerity/ui": "0.1.2",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "zod": "^3.23.0"

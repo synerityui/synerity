@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import * as styles from "./Badge.module.css";
+import styles from "./Badge.module.css";
 
 export type BadgeVariant = "default" | "primary" | "success" | "warning" | "danger" | "info";
 export type BadgeSize = "sm" | "md" | "lg";

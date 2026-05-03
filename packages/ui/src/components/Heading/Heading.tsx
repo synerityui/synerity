@@ -1,7 +1,7 @@
 import { forwardRef, createElement } from "react";
 import clsx from "clsx";
 
-import * as styles from "./Heading.module.css";
+import styles from "./Heading.module.css";
 
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 

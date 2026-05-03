@@ -1,7 +1,7 @@
 import { forwardRef, createElement } from "react";
 import clsx from "clsx";
 
-import * as styles from "./Text.module.css";
+import styles from "./Text.module.css";
 
 export type TextSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 export type TextWeight = "normal" | "medium" | "semibold" | "bold";

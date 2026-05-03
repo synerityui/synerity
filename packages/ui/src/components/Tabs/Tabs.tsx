@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 import clsx from "clsx";
 import { useTabs } from "@synerity/headless";
 
-import * as styles from "./Tabs.module.css";
+import styles from "./Tabs.module.css";
 
 export type TabsVariant = "line" | "pills";
 

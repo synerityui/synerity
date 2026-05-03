@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import clsx from "clsx";
 import { useSwitch } from "@synerity/headless";
 
-import * as styles from "./Switch.module.css";
+import styles from "./Switch.module.css";
 
 export type SwitchSize = "sm" | "md" | "lg";
 

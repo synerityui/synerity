@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import clsx from "clsx";
 
-import * as styles from "./Stack.module.css";
+import styles from "./Stack.module.css";
 
 export type StackProps = {
   gap?: React.CSSProperties["gap"];

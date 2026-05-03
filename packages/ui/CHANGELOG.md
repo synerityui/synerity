@@ -1,5 +1,13 @@
 # @synerity/ui
 
+## 0.1.2
+
+### Patch Changes
+
+- Fix CSS class names not applied when installed from npm.
+
+  Root cause: esbuild's `local-css` / `injectStyle` loaders produce empty class name objects (`{}`). The pre-build script now runs `postcss-modules` on every `*.module.css` file to generate a `*.module.css.js` sidecar with scoped class names and inline CSS injection. tsup's `onResolve` plugin redirects the component imports to these sidecars. Result: all component styles are injected at runtime with properly scoped, non-conflicting class names.
+
 ## 0.1.1
 
 ### Patch Changes

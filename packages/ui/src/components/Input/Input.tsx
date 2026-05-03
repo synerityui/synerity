@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import clsx from "clsx";
 import { useInput } from "@synerity/headless";
 
-import * as styles from "./Input.module.css";
+import styles from "./Input.module.css";
 
 export type InputSize = "sm" | "md" | "lg";
 

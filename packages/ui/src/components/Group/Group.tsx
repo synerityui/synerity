@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import clsx from "clsx";
 
-import * as styles from "./Group.module.css";
+import styles from "./Group.module.css";
 
 export type GroupProps = {
   gap?: React.CSSProperties["gap"];
