@@ -15,8 +15,9 @@ That combination doesn't exist in any single library today. That's the gap Syner
 | [`@synerity/ui`](./packages/ui) | Styled components with the default design system | [![npm](https://img.shields.io/npm/v/@synerity/ui)](https://www.npmjs.com/package/@synerity/ui) |
 | [`@synerity/headless`](./packages/headless) | Logic + accessibility primitives, zero CSS | [![npm](https://img.shields.io/npm/v/@synerity/headless)](https://www.npmjs.com/package/@synerity/headless) |
 | [`@synerity/tokens`](./packages/tokens) | Design tokens and CSS custom properties | [![npm](https://img.shields.io/npm/v/@synerity/tokens)](https://www.npmjs.com/package/@synerity/tokens) |
-| [`@synerity/icons`](./packages/icons) | Fully tree-shakeable icon set | [![npm](https://img.shields.io/npm/v/@synerity/icons)](https://www.npmjs.com/package/@synerity/icons) |
-| [`@synerity/forms`](./packages/forms) | Form primitives with built-in validation | [![npm](https://img.shields.io/npm/v/@synerity/forms)](https://www.npmjs.com/package/@synerity/forms) |
+| [`@synerity/icons`](./packages/icons) | Fully tree-shakeable icon set (75 icons) | [![npm](https://img.shields.io/npm/v/@synerity/icons)](https://www.npmjs.com/package/@synerity/icons) |
+| [`@synerity/forms`](./packages/forms) | Form primitives with Zod validation | [![npm](https://img.shields.io/npm/v/@synerity/forms)](https://www.npmjs.com/package/@synerity/forms) |
+| [`@synerity/memory-graph`](./packages/memory-graph) | Zero-dependency knowledge graph for LLM context | [![npm](https://img.shields.io/npm/v/@synerity/memory-graph)](https://www.npmjs.com/package/@synerity/memory-graph) |
 | [`@synerity/cli`](./packages/cli) | Copy-paste component installer | [![npm](https://img.shields.io/npm/v/@synerity/cli)](https://www.npmjs.com/package/@synerity/cli) |
 
 ---
@@ -61,6 +62,27 @@ npx synerity add button modal table input
 
 Components are copied directly into your project — you own the code, no `npm update` required.
 
+### Option 4 — LLM context management
+
+```bash
+npm install @synerity/memory-graph
+```
+
+```ts
+import { MemoryGraph } from '@synerity/memory-graph'
+
+const graph = new MemoryGraph()
+
+graph.add('User prefers dark mode', { tags: ['preference'], importance: 0.9 })
+graph.add('Subscription: Pro plan',  { tags: ['billing'],    importance: 1.0 })
+graph.relate('n1', 'n2', 'relates_to')
+
+// Retrieve only what's relevant, under a token budget
+const context = graph.toContext({ prompt: 'billing', maxTokens: 400 })
+```
+
+Zero dependencies. Works in Node.js 18+ and modern browsers.
+
 ---
 
 ## Why Synerity?
@@ -88,12 +110,17 @@ Synerity is the first library that ships all of the following without compromise
 
 ## Architecture
 
-Synerity ships two independent layers:
+Synerity ships three independent layers plus two utilities:
 
 ```
 @synerity/headless     →   logic, state, a11y, keyboard nav (zero CSS)
        ↓
+@synerity/tokens       →   CSS custom properties (colors, spacing, motion, radius)
+       ↓
 @synerity/ui           →   token-driven default skin on top of headless
+
+@synerity/forms        →   form engine with Zod validation (uses headless)
+@synerity/memory-graph →   LLM context graph (standalone, no React dep)
 ```
 
 You can use either layer standalone. Teams wanting full control use `@synerity/headless` and style it themselves. Teams wanting to ship fast use `@synerity/ui` and override tokens.
@@ -117,6 +144,17 @@ No JS theming. No runtime cost. Works in RSC.
 
 ---
 
+## Playground
+
+Browse all components live at [`apps/playground`](./apps/playground) — a Vite + React 18 sandbox with dark/light mode, code snippets, and design system reference pages (Brand, Colors, Typography, Spacing, Icons, Motion, Memory Graph).
+
+```bash
+pnpm --filter playground dev
+# → http://localhost:5173
+```
+
+---
+
 ## Contributing
 
 This is a pnpm monorepo powered by Turborepo.
@@ -137,6 +175,14 @@ pnpm dev
 
 # Run tests
 pnpm test
+```
+
+```bash
+# Lint
+pnpm lint
+
+# Type-check all packages
+pnpm typecheck
 ```
 
 See [CONTRIBUTING.md](./docs/CONTRIBUTING.md) for guidelines.
