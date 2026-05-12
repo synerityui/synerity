@@ -25,7 +25,7 @@ type UseSelectProps = {
 type UseSelectReturn = {
   triggerProps: React.ButtonHTMLAttributes<HTMLButtonElement>;
   /** Attach this ref to the trigger <button> element. */
-  triggerRef: React.RefObject<HTMLButtonElement | null>;
+  triggerRef: React.RefObject<HTMLButtonElement>;
   listboxProps: React.HTMLAttributes<HTMLElement>;
   getOptionProps: (option: SelectOption) => React.HTMLAttributes<HTMLElement>;
   isOpen: boolean;
