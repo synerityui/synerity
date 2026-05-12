@@ -1,0 +1,61 @@
+/* The anchor keeps relative positioning so the panel floats correctly */
+.anchor {
+  position: relative;
+  display: inline-block;
+}
+
+/* ── Floating panel ───────────────────────────────────────────── */
+
+.popover {
+  position: absolute;
+  z-index: var(--synerity-z-dropdown);
+  background: var(--synerity-color-surface);
+  border: 1.5px solid var(--synerity-color-border);
+  border-radius: var(--synerity-radius-lg);
+  box-shadow: var(--synerity-shadow-lg);
+  padding: var(--synerity-space-3);
+  min-width: 12rem;
+  outline: none;
+}
+
+/* ── Placements ───────────────────────────────────────────────── */
+
+.bottom,
+.bottom_start,
+.bottom_end {
+  top: calc(100% + var(--synerity-space-2));
+}
+
+.top,
+.top_start,
+.top_end {
+  bottom: calc(100% + var(--synerity-space-2));
+}
+
+.left {
+  right: calc(100% + var(--synerity-space-2));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right {
+  left: calc(100% + var(--synerity-space-2));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bottom,
+.top {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom_start,
+.top_start {
+  left: 0;
+}
+
+.bottom_end,
+.top_end {
+  right: 0;
+}

@@ -1,0 +1,97 @@
+.root {
+  display: inline-block;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: var(--synerity-space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Sizes ──────────────────────────────────────────────────────── */
+
+.sm .item {
+  min-width: 1.75rem;
+  height: 1.75rem;
+  font-size: var(--synerity-text-sm);
+}
+
+.md .item {
+  min-width: 2.25rem;
+  height: 2.25rem;
+  font-size: var(--synerity-text-md);
+}
+
+.lg .item {
+  min-width: 2.75rem;
+  height: 2.75rem;
+  font-size: var(--synerity-text-lg);
+}
+
+/* ── Base item ──────────────────────────────────────────────────── */
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--synerity-space-1);
+  border-radius: var(--synerity-radius-md);
+  font-family: var(--synerity-font-sans);
+  font-weight: var(--synerity-weight-medium);
+  color: var(--synerity-color-text-primary);
+  background: transparent;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  outline: none;
+  transition:
+    background var(--synerity-duration-fast) var(--synerity-easing-default),
+    border-color var(--synerity-duration-fast) var(--synerity-easing-default),
+    color var(--synerity-duration-fast) var(--synerity-easing-default);
+}
+
+.page:hover:not(.active) {
+  background: var(--synerity-color-surface-raised);
+}
+
+.page:focus-visible {
+  box-shadow: 0 0 0 3px var(--synerity-color-focus-ring);
+}
+
+.page.active {
+  background: var(--synerity-color-primary);
+  color: var(--synerity-color-text-on-primary);
+  border-color: var(--synerity-color-primary);
+  cursor: default;
+}
+
+/* ── Controls (prev / next) ─────────────────────────────────────── */
+
+.control {
+  color: var(--synerity-color-text-secondary);
+}
+
+.control:hover:not(.disabled) {
+  background: var(--synerity-color-surface-raised);
+  color: var(--synerity-color-text-primary);
+}
+
+.control:focus-visible {
+  box-shadow: 0 0 0 3px var(--synerity-color-focus-ring);
+}
+
+.control.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Ellipsis ───────────────────────────────────────────────────── */
+
+.ellipsis {
+  color: var(--synerity-color-text-secondary);
+  cursor: default;
+  border: none;
+  background: none;
+}

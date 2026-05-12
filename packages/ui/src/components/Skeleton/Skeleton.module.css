@@ -1,0 +1,19 @@
+@keyframes syn-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.root {
+  display: block;
+  width: 100%;
+  height: 1em;
+  border-radius: var(--synerity-radius-md);
+  background: linear-gradient(
+    90deg,
+    var(--synerity-color-surface-raised) 25%,
+    var(--synerity-color-border)         50%,
+    var(--synerity-color-surface-raised) 75%
+  );
+  background-size: 200% 100%;
+  animation: syn-shimmer 1.6s ease-in-out infinite;
+}
