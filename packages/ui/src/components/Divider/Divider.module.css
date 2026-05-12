@@ -1,0 +1,37 @@
+.horizontal {
+  border: none;
+  border-top: 1px solid var(--synerity-color-border);
+  margin: 0;
+  width: 100%;
+}
+
+.vertical {
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  background-color: var(--synerity-color-border);
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.labeled {
+  display: flex;
+  align-items: center;
+  gap: var(--synerity-space-3);
+  width: 100%;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--synerity-color-border);
+}
+
+.labelText {
+  flex-shrink: 0;
+  font-family: var(--synerity-font-sans);
+  font-size: var(--synerity-text-sm);
+  font-weight: var(--synerity-weight-medium);
+  color: var(--synerity-color-text-secondary);
+  white-space: nowrap;
+}

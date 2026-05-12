@@ -1,0 +1,55 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--synerity-space-1);
+  font-family: var(--synerity-font-sans);
+}
+
+.label {
+  margin: 0;
+  font-size: var(--synerity-text-sm);
+  font-weight: var(--synerity-weight-normal);
+  color: var(--synerity-color-text-secondary);
+}
+
+.value {
+  margin: 0;
+  font-size: var(--synerity-text-2xl);
+  font-weight: var(--synerity-weight-bold);
+  color: var(--synerity-color-text-primary);
+  line-height: 1.2;
+}
+
+.trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--synerity-space-1);
+  font-size: var(--synerity-text-xs);
+  font-weight: var(--synerity-weight-medium);
+  color: var(--synerity-color-text-secondary);
+  border-radius: var(--synerity-radius-full);
+  padding: 1px var(--synerity-space-2);
+  background: var(--synerity-color-neutral-9);
+  width: fit-content;
+}
+
+.trend.up {
+  background: var(--synerity-color-success-subtle);
+  color: var(--synerity-color-success);
+}
+
+.trend.down {
+  background: var(--synerity-color-danger-subtle);
+  color: var(--synerity-color-danger);
+}
+
+.trend.neutral {
+  background: var(--synerity-color-neutral-9);
+  color: var(--synerity-color-text-secondary);
+}
+
+.helpText {
+  margin: 0;
+  font-size: var(--synerity-text-xs);
+  color: var(--synerity-color-text-tertiary);
+}

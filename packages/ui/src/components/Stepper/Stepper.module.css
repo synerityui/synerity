@@ -1,0 +1,166 @@
+.root {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--synerity-font-sans);
+}
+
+/* ── Orientations ── */
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Step item ── */
+.step {
+  display: flex;
+  flex: 1;
+}
+
+/* Horizontal: stack indicator + label vertically, connector goes right */
+.horizontal .step {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Vertical: indicator left, label right */
+.vertical .step {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--synerity-space-3);
+  flex: unset;
+}
+
+/* ── Indicator column ── */
+.indicator {
+  display: flex;
+  align-items: center;
+}
+
+.horizontal .indicator {
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.vertical .indicator {
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ── Circle ── */
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--synerity-radius-full);
+  font-size: var(--synerity-text-xs);
+  font-weight: var(--synerity-weight-semibold);
+  flex-shrink: 0;
+  transition:
+    background var(--synerity-duration-fast) var(--synerity-easing-default),
+    border-color var(--synerity-duration-fast) var(--synerity-easing-default);
+  position: relative;
+  z-index: 1;
+}
+
+.circle-complete {
+  background: var(--synerity-color-primary);
+  color: #fff;
+  border: 2px solid var(--synerity-color-primary);
+}
+
+.circle-current {
+  background: transparent;
+  color: var(--synerity-color-primary);
+  border: 2px solid var(--synerity-color-primary);
+  box-shadow: 0 0 0 3px var(--synerity-color-primary-subtle);
+}
+
+.circle-upcoming {
+  background: transparent;
+  color: var(--synerity-color-text-tertiary);
+  border: 2px solid var(--synerity-color-border-strong);
+}
+
+/* ── Connector line ── */
+.connector {
+  display: block;
+  background: var(--synerity-color-border);
+  transition: background var(--synerity-duration-normal) var(--synerity-easing-default);
+}
+
+.horizontal .connector {
+  height: 2px;
+  flex: 1;
+  min-width: var(--synerity-space-6);
+}
+
+.vertical .connector {
+  width: 2px;
+  flex: 1;
+  min-height: var(--synerity-space-6);
+  margin-top: var(--synerity-space-1);
+}
+
+.connector-complete {
+  background: var(--synerity-color-primary);
+}
+.connector-current,
+.connector-upcoming {
+  background: var(--synerity-color-border);
+}
+
+/* ── Label group ── */
+.labelGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.horizontal .labelGroup {
+  align-items: center;
+  margin-top: var(--synerity-space-2);
+}
+
+.vertical .labelGroup {
+  padding-bottom: var(--synerity-space-6);
+  padding-top: 4px;
+}
+
+.vertical .step:last-child .labelGroup {
+  padding-bottom: 0;
+}
+
+.label {
+  font-size: var(--synerity-text-sm);
+  font-weight: var(--synerity-weight-medium);
+}
+
+.label-complete {
+  color: var(--synerity-color-text-secondary);
+}
+.label-current {
+  color: var(--synerity-color-primary);
+  font-weight: var(--synerity-weight-semibold);
+}
+.label-upcoming {
+  color: var(--synerity-color-text-tertiary);
+}
+
+.description {
+  font-size: var(--synerity-text-xs);
+  color: var(--synerity-color-text-tertiary);
+}

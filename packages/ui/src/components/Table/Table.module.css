@@ -1,0 +1,84 @@
+.container {
+  overflow-x: auto;
+  width: 100%;
+  border-radius: var(--synerity-radius-md);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--synerity-font-sans);
+  font-size: var(--synerity-text-sm);
+  color: var(--synerity-color-text-primary);
+}
+
+/* Sizes — control cell padding via CSS custom property cascade */
+.sm {
+  --table-cell-padding-v: var(--synerity-space-1-5);
+  --table-cell-padding-h: var(--synerity-space-3);
+}
+.md {
+  --table-cell-padding-v: var(--synerity-space-2-5);
+  --table-cell-padding-h: var(--synerity-space-4);
+}
+.lg {
+  --table-cell-padding-v: var(--synerity-space-4);
+  --table-cell-padding-h: var(--synerity-space-6);
+}
+
+/* Header */
+.thead {
+  background: var(--synerity-color-surface-raised);
+}
+
+.th {
+  padding: var(--table-cell-padding-v, var(--synerity-space-2-5)) var(--table-cell-padding-h, var(--synerity-space-4));
+  font-weight: var(--synerity-weight-semibold);
+  color: var(--synerity-color-text-secondary);
+  text-transform: uppercase;
+  font-size: var(--synerity-text-xs);
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--synerity-color-border);
+  white-space: nowrap;
+}
+
+.td {
+  padding: var(--table-cell-padding-v, var(--synerity-space-2-5)) var(--table-cell-padding-h, var(--synerity-space-4));
+  border-bottom: 1px solid var(--synerity-color-border);
+  color: var(--synerity-color-text-primary);
+}
+
+.tr:last-child .td {
+  border-bottom: none;
+}
+
+/* Alignment */
+.align-left   { text-align: left; }
+.align-center { text-align: center; }
+.align-right  { text-align: right; }
+
+/* Striped */
+.striped tbody tr:nth-child(odd) {
+  background: var(--synerity-color-surface-raised);
+}
+
+/* Hoverable */
+.hoverable tbody tr:hover {
+  background: var(--synerity-color-surface-raised);
+  cursor: default;
+}
+
+/* Bordered */
+.bordered .th,
+.bordered .td {
+  border: 1px solid var(--synerity-color-border);
+}
+
+/* Sticky header */
+.stickyHeader thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--synerity-color-surface-raised);
+  box-shadow: 0 1px 0 var(--synerity-color-border);
+}

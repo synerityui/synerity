@@ -1,0 +1,45 @@
+.root {
+  font-family: var(--synerity-font-sans);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--synerity-text-sm);
+}
+
+.link {
+  color: var(--synerity-color-primary);
+  text-decoration: none;
+  font-weight: var(--synerity-weight-normal);
+  transition: opacity var(--synerity-duration-fast) var(--synerity-easing-default);
+}
+.link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.text {
+  color: var(--synerity-color-text-secondary);
+}
+
+.current {
+  color: var(--synerity-color-text-primary);
+  font-weight: var(--synerity-weight-medium);
+}
+
+.separator {
+  color: var(--synerity-color-text-tertiary);
+  margin: 0 var(--synerity-space-2);
+  user-select: none;
+}

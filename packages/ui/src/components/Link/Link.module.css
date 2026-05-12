@@ -1,0 +1,43 @@
+.root {
+  font-family: var(--synerity-font-sans);
+  color: var(--synerity-color-text-link);
+  cursor: pointer;
+  transition: color var(--synerity-duration-fast) var(--synerity-easing-default);
+  outline-offset: 2px;
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--synerity-color-border-focus);
+  border-radius: var(--synerity-radius-sm);
+}
+
+.inline {
+  display: inline;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.inline:hover {
+  color: var(--synerity-color-text-link-hover);
+}
+
+.standalone {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--synerity-space-1);
+  text-decoration: none;
+  font-weight: var(--synerity-weight-medium);
+}
+
+.standalone:hover {
+  color: var(--synerity-color-text-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.externalIcon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  margin-inline-start: 0.15em;
+}

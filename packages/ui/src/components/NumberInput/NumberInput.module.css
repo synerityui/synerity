@@ -1,0 +1,118 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--synerity-space-1);
+  font-family: var(--synerity-font-sans);
+}
+
+.label {
+  font-size: var(--synerity-text-sm);
+  font-weight: var(--synerity-weight-medium);
+  color: var(--synerity-color-text-primary);
+}
+
+/* Flex row: [−] [input] [+] */
+.control {
+  display: flex;
+  align-items: stretch;
+  border: 1.5px solid var(--synerity-color-border);
+  border-radius: var(--synerity-radius-md);
+  background: var(--synerity-color-surface);
+  overflow: hidden;
+  transition: border-color var(--synerity-duration-fast) var(--synerity-easing-default);
+}
+
+.control:focus-within {
+  border-color: var(--synerity-color-border-focus);
+  box-shadow: 0 0 0 3px var(--synerity-color-focus-ring);
+}
+
+.control:hover:not(:focus-within) {
+  border-color: var(--synerity-color-border-strong);
+}
+
+/* Sizes — drive height for the whole control */
+.sm { height: 2rem;   font-size: var(--synerity-text-sm); }
+.md { height: 2.5rem; font-size: var(--synerity-text-md); }
+.lg { height: 3rem;   font-size: var(--synerity-text-md); }
+
+.input {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: var(--synerity-color-text-primary);
+  font-family: var(--synerity-font-sans);
+  font-size: inherit;
+  outline: none;
+  /* Remove native spinners */
+  -moz-appearance: textfield;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.25rem;
+  background: transparent;
+  border: none;
+  color: var(--synerity-color-text-secondary);
+  cursor: pointer;
+  transition: background var(--synerity-duration-fast) var(--synerity-easing-default),
+              color var(--synerity-duration-fast) var(--synerity-easing-default);
+}
+
+.stepper:hover:not(:disabled) {
+  background: var(--synerity-color-surface-raised);
+  color: var(--synerity-color-text-primary);
+}
+
+.stepper:disabled {
+  color: var(--synerity-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.stepperLeft {
+  border-right: 1px solid var(--synerity-color-border);
+}
+
+.stepperRight {
+  border-left: 1px solid var(--synerity-color-border);
+}
+
+/* States */
+.invalid .control,
+.invalid .control:hover,
+.invalid .control:focus-within {
+  border-color: var(--synerity-color-danger, #ef4444);
+}
+.invalid .control:focus-within {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25);
+}
+
+.disabled .control {
+  background: var(--synerity-color-surface-raised);
+}
+
+.disabled .input {
+  color: var(--synerity-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.hint {
+  font-size: var(--synerity-text-sm);
+  color: var(--synerity-color-text-secondary);
+}
+
+.error {
+  font-size: var(--synerity-text-sm);
+  color: var(--synerity-color-danger, #ef4444);
+}

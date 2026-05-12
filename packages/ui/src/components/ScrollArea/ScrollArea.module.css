@@ -1,0 +1,31 @@
+.root {
+  overflow: auto;
+  /* Custom scrollbar — WebKit */
+  scrollbar-width: thin;
+  scrollbar-color: var(--synerity-color-border) transparent;
+}
+
+/* WebKit scrollbar styles */
+.root::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.root::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: var(--synerity-radius-full);
+}
+
+.root::-webkit-scrollbar-thumb {
+  background: var(--synerity-color-border);
+  border-radius: var(--synerity-radius-full);
+  transition: background var(--synerity-duration-fast) var(--synerity-easing-default);
+}
+
+.root::-webkit-scrollbar-thumb:hover {
+  background: var(--synerity-color-border-strong);
+}
+
+.root::-webkit-scrollbar-corner {
+  background: transparent;
+}

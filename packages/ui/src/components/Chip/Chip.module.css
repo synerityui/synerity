@@ -1,0 +1,74 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--synerity-space-1);
+  font-family: var(--synerity-font-sans);
+  font-weight: var(--synerity-weight-medium);
+  border-radius: var(--synerity-radius-full);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Sizes */
+.sm {
+  font-size: var(--synerity-text-xs);
+  padding: 1px var(--synerity-space-2);
+}
+.md {
+  font-size: var(--synerity-text-sm);
+  padding: var(--synerity-space-0\.5) var(--synerity-space-2-5);
+}
+
+/* Variants */
+.default {
+  background: var(--synerity-color-neutral-9);
+  color: var(--synerity-color-text-secondary);
+}
+.primary {
+  background: var(--synerity-color-primary-subtle);
+  color: var(--synerity-color-primary);
+}
+.success {
+  background: var(--synerity-color-success-subtle);
+  color: var(--synerity-color-success);
+}
+.warning {
+  background: var(--synerity-color-warning-subtle);
+  color: var(--synerity-color-warning);
+}
+.danger {
+  background: var(--synerity-color-danger-subtle);
+  color: var(--synerity-color-danger);
+}
+
+/* Disabled state */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.label {
+  line-height: 1;
+}
+
+/* Remove button */
+.removeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+  border-radius: var(--synerity-radius-full);
+  transition: opacity var(--synerity-duration-fast) var(--synerity-easing-default);
+  line-height: 0;
+}
+.removeBtn:hover:not(:disabled) {
+  opacity: 1;
+}
+.removeBtn:disabled {
+  cursor: not-allowed;
+}
