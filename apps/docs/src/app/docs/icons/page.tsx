@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import type React from "react";
+import * as Icons from "@synerity/icons";
 import { CodeBlock } from "@/components/CodeBlock";
 
 export const metadata: Metadata = { title: "Icons" };
@@ -71,9 +73,10 @@ export default function IconsPage() {
                 background: "var(--syn-bg-raised)", borderRadius: "var(--syn-radius-md)",
                 display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
               }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="9" strokeDasharray="2 2" />
-                </svg>
+                {(() => {
+                  const IconComponent = Icons[name as keyof typeof Icons] as React.ComponentType<{ size?: number }>;
+                  return IconComponent ? <IconComponent size={20} /> : null;
+                })()}
                 <span style={{ fontFamily: "var(--syn-font-mono)", fontSize: 10, color: "var(--syn-text-muted)", textAlign: "center", wordBreak: "break-all" }}>{name}</span>
               </div>
             ))}
