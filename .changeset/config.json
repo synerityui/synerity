@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@synerity/eslint-config", "@synerity/tsconfig"]
+  "ignore": ["@synerity/eslint-config", "@synerity/tsconfig", "docs", "playground", "sample"]
 }
