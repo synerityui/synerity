@@ -34,7 +34,6 @@ export function AccordionDemo() {
           type="single"
           defaultValue="a11y"
           items={items}
-          style={{ width: "100%" }}
         />
       </DemoSection>
 
@@ -47,7 +46,6 @@ export function AccordionDemo() {
           type="multiple"
           defaultValue={["a11y", "rsc"]}
           items={items}
-          style={{ width: "100%" }}
         />
       </DemoSection>
     </>

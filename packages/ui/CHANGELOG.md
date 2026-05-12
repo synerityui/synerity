@@ -1,5 +1,25 @@
 # @synerity/ui
 
+## 0.2.0
+
+### Minor Changes
+
+- Add 27 components completing the v1.0 component set.
+
+  **Inputs & Controls:** Radio, RadioGroup, Select, Combobox, NumberInput, Slider, PinInput
+
+  **Feedback & Display:** Progress, Skeleton, Chip, Callout, Stat
+
+  **Layout:** Grid, Divider, Container, AspectRatio, ScrollArea
+
+  **Typography:** Link, Mark, Truncate
+
+  **Overlays:** Popover, Drawer, Menu, MenuItem, MenuDivider, MenuGroup
+
+  **Navigation:** Pagination, Breadcrumb, Stepper
+
+  **Data Display:** Table (+ Thead/Tbody/Tr/Th/Td/TableContainer), Timeline
+
 ## 0.1.2
 
 ### Patch Changes

@@ -10,22 +10,49 @@ export type DemoEntry = {
 
 import { AccordionDemo } from "./Accordion.demo";
 import { AlertDemo } from "./Alert.demo";
+import { AspectRatioDemo } from "./AspectRatio.demo";
 import { AvatarDemo } from "./Avatar.demo";
 import { BadgeDemo } from "./Badge.demo";
+import { BreadcrumbDemo } from "./Breadcrumb.demo";
 import { ButtonDemo } from "./Button.demo";
+import { CalloutDemo } from "./Callout.demo";
 import { CardDemo } from "./Card.demo";
 import { CheckboxDemo } from "./Checkbox.demo";
+import { ChipDemo } from "./Chip.demo";
+import { ComboboxDemo } from "./Combobox.demo";
+import { ContainerDemo } from "./Container.demo";
+import { DividerDemo } from "./Divider.demo";
+import { DrawerDemo } from "./Drawer.demo";
+import { GridDemo } from "./Grid.demo";
 import { GroupDemo } from "./Group.demo";
 import { HeadingDemo } from "./Heading.demo";
 import { InputDemo } from "./Input.demo";
+import { LinkDemo } from "./Link.demo";
+import { MarkDemo } from "./Mark.demo";
+import { MenuDemo } from "./Menu.demo";
 import { ModalDemo } from "./Modal.demo";
+import { NumberInputDemo } from "./NumberInput.demo";
+import { PaginationDemo } from "./Pagination.demo";
+import { PinInputDemo } from "./PinInput.demo";
+import { PopoverDemo } from "./Popover.demo";
+import { ProgressDemo } from "./Progress.demo";
+import { RadioDemo } from "./Radio.demo";
+import { ScrollAreaDemo } from "./ScrollArea.demo";
+import { SelectDemo } from "./Select.demo";
+import { SkeletonDemo } from "./Skeleton.demo";
+import { SliderDemo } from "./Slider.demo";
 import { SpinnerDemo } from "./Spinner.demo";
 import { StackDemo } from "./Stack.demo";
+import { StatDemo } from "./Stat.demo";
+import { StepperDemo } from "./Stepper.demo";
 import { SwitchDemo } from "./Switch.demo";
+import { TableDemo } from "./Table.demo";
 import { TabsDemo } from "./Tabs.demo";
 import { TextDemo } from "./Text.demo";
 import { TextareaDemo } from "./Textarea.demo";
+import { TimelineDemo } from "./Timeline.demo";
 import { TooltipDemo } from "./Tooltip.demo";
+import { TruncateDemo } from "./Truncate.demo";
 
 export const registry: DemoEntry[] = [
   // Inputs & Controls
@@ -64,6 +91,48 @@ export const registry: DemoEntry[] = [
     category: "inputs",
     Demo: SwitchDemo,
   },
+  {
+    name: "Radio",
+    slug: "radio",
+    description: "Radio button group with controlled and uncontrolled modes.",
+    category: "inputs",
+    Demo: RadioDemo,
+  },
+  {
+    name: "Select",
+    slug: "select",
+    description: "Custom single-select with keyboard navigation and ARIA combobox pattern.",
+    category: "inputs",
+    Demo: SelectDemo,
+  },
+  {
+    name: "Combobox",
+    slug: "combobox",
+    description: "Filterable text input with a listbox dropdown.",
+    category: "inputs",
+    Demo: ComboboxDemo,
+  },
+  {
+    name: "NumberInput",
+    slug: "number-input",
+    description: "Numeric spinbutton with increment/decrement controls.",
+    category: "inputs",
+    Demo: NumberInputDemo,
+  },
+  {
+    name: "Slider",
+    slug: "slider",
+    description: "Range slider with optional label and value display.",
+    category: "inputs",
+    Demo: SliderDemo,
+  },
+  {
+    name: "PinInput",
+    slug: "pin-input",
+    description: "OTP / PIN input with auto-advance and paste support.",
+    category: "inputs",
+    Demo: PinInputDemo,
+  },
   // Feedback & Display
   {
     name: "Alert",
@@ -93,6 +162,62 @@ export const registry: DemoEntry[] = [
     category: "display",
     Demo: AvatarDemo,
   },
+  {
+    name: "Progress",
+    slug: "progress",
+    description: "Linear progress bar with ARIA progressbar semantics.",
+    category: "display",
+    Demo: ProgressDemo,
+  },
+  {
+    name: "Skeleton",
+    slug: "skeleton",
+    description: "Shimmer loading placeholder for content areas.",
+    category: "display",
+    Demo: SkeletonDemo,
+  },
+  {
+    name: "Chip",
+    slug: "chip",
+    description: "Small removable pill tag for filters or labels.",
+    category: "display",
+    Demo: ChipDemo,
+  },
+  {
+    name: "Callout",
+    slug: "callout",
+    description: "Inline notice block for contextual information or warnings.",
+    category: "display",
+    Demo: CalloutDemo,
+  },
+  {
+    name: "Stat",
+    slug: "stat",
+    description: "Metric display card with optional trend indicator.",
+    category: "display",
+    Demo: StatDemo,
+  },
+  {
+    name: "Popover",
+    slug: "popover",
+    description: "Non-modal floating panel anchored to a trigger element.",
+    category: "display",
+    Demo: PopoverDemo,
+  },
+  {
+    name: "Table",
+    slug: "table",
+    description: "Semantic HTML table with striped, hover, and size variants.",
+    category: "display",
+    Demo: TableDemo,
+  },
+  {
+    name: "Timeline",
+    slug: "timeline",
+    description: "Vertical ordered event list with labelled dots and connecting lines.",
+    category: "display",
+    Demo: TimelineDemo,
+  },
   // Layout
   {
     name: "Card",
@@ -115,6 +240,41 @@ export const registry: DemoEntry[] = [
     category: "layout",
     Demo: GroupDemo,
   },
+  {
+    name: "Grid",
+    slug: "grid",
+    description: "CSS Grid container with fixed or responsive column counts.",
+    category: "layout",
+    Demo: GridDemo,
+  },
+  {
+    name: "Divider",
+    slug: "divider",
+    description: "Visual separator for horizontal and vertical orientations.",
+    category: "layout",
+    Demo: DividerDemo,
+  },
+  {
+    name: "Container",
+    slug: "container",
+    description: "Centred layout wrapper that constrains content to a max-width.",
+    category: "layout",
+    Demo: ContainerDemo,
+  },
+  {
+    name: "AspectRatio",
+    slug: "aspect-ratio",
+    description: "Preserves a fixed width-to-height ratio for child content.",
+    category: "layout",
+    Demo: AspectRatioDemo,
+  },
+  {
+    name: "ScrollArea",
+    slug: "scroll-area",
+    description: "Scrollable container with a styled thin scrollbar.",
+    category: "layout",
+    Demo: ScrollAreaDemo,
+  },
   // Typography
   {
     name: "Text",
@@ -129,6 +289,27 @@ export const registry: DemoEntry[] = [
     description: "Typographic heading — maps h1–h6 via a level prop.",
     category: "typography",
     Demo: HeadingDemo,
+  },
+  {
+    name: "Link",
+    slug: "link",
+    description: "Anchor element styled with design-system link tokens.",
+    category: "typography",
+    Demo: LinkDemo,
+  },
+  {
+    name: "Mark",
+    slug: "mark",
+    description: "Inline text highlight using a semi-transparent tinted background.",
+    category: "typography",
+    Demo: MarkDemo,
+  },
+  {
+    name: "Truncate",
+    slug: "truncate",
+    description: "Clamps text to a fixed number of lines with an ellipsis.",
+    category: "typography",
+    Demo: TruncateDemo,
   },
   // Overlays
   {
@@ -145,6 +326,20 @@ export const registry: DemoEntry[] = [
     category: "overlays",
     Demo: TooltipDemo,
   },
+  {
+    name: "Drawer",
+    slug: "drawer",
+    description: "Slide-in panel anchored to any viewport edge.",
+    category: "overlays",
+    Demo: DrawerDemo,
+  },
+  {
+    name: "Menu",
+    slug: "menu",
+    description: "Dropdown menu following the ARIA menu pattern.",
+    category: "overlays",
+    Demo: MenuDemo,
+  },
   // Navigation
   {
     name: "Tabs",
@@ -159,5 +354,26 @@ export const registry: DemoEntry[] = [
     description: "Expandable content sections with animated transitions.",
     category: "navigation",
     Demo: AccordionDemo,
+  },
+  {
+    name: "Breadcrumb",
+    slug: "breadcrumb",
+    description: "Navigation breadcrumb trail with configurable separator.",
+    category: "navigation",
+    Demo: BreadcrumbDemo,
+  },
+  {
+    name: "Stepper",
+    slug: "stepper",
+    description: "Linear multi-step progress indicator with horizontal and vertical orientations.",
+    category: "navigation",
+    Demo: StepperDemo,
+  },
+  {
+    name: "Pagination",
+    slug: "pagination",
+    description: "Page navigation with ellipsis for large page counts.",
+    category: "navigation",
+    Demo: PaginationDemo,
   },
 ];

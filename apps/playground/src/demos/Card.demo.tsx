@@ -41,7 +41,7 @@ export function CardDemo() {
           <CardHeader>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span>Active plan</span>
-              <Badge variant="subtle" colorScheme="success">Pro</Badge>
+              <Badge variant="success">Pro</Badge>
             </div>
           </CardHeader>
           <CardBody>

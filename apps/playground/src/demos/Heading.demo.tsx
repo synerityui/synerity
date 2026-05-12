@@ -24,8 +24,8 @@ export function HeadingDemo() {
         col
         code={`<Heading level={2} weight="normal">Light heading</Heading>\n<Heading level={2} weight="bold">Bold heading</Heading>`}
       >
-        <Heading level={2} weight="normal">Light heading weight</Heading>
-        <Heading level={2} weight="bold">Bold heading weight</Heading>
+        <Heading level={2}>Light heading weight</Heading>
+        <Heading level={2}>Bold heading weight</Heading>
       </DemoSection>
     </>
   );

@@ -1,5 +1,12 @@
 # sample
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @synerity/ui@0.2.0
+
 ## 0.0.2
 
 ### Patch Changes
