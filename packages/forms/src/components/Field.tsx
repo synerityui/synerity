@@ -1,4 +1,6 @@
-import React, { useEffect, useMemo } from "react";
+import type React from "react";
+import { useEffect, useMemo } from "react";
+
 import { FieldContext } from "../context/FieldContext";
 import { useFormContext } from "../context/FormContext";
 import type { FieldContextValue, FieldValidator } from "../types";

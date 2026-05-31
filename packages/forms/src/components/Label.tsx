@@ -1,4 +1,5 @@
-import React from "react";
+import type React from "react";
+
 import { useFieldContext } from "../context/FieldContext";
 
 type LabelProps = Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "htmlFor">;

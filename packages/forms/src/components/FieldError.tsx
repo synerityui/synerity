@@ -1,4 +1,5 @@
-import React from "react";
+import type React from "react";
+
 import { useFieldContext } from "../context/FieldContext";
 import { useFormContext } from "../context/FormContext";
 

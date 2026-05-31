@@ -1,4 +1,6 @@
-import React, { useCallback, useMemo, useReducer, useRef } from "react";
+import type React from "react";
+import { useCallback, useMemo, useReducer, useRef } from "react";
+
 import { FormContext } from "../context/FormContext";
 import type {
   FieldValidator,
