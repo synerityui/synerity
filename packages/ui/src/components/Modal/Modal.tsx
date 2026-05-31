@@ -54,6 +54,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
 
     return (
       <div className={styles.overlay} {...overlayProps}>
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
         <div
           ref={dialogRef as React.Ref<HTMLDivElement>}
           className={clsx(styles.dialog, styles[size], className)}

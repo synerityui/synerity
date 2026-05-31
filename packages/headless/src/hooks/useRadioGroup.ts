@@ -1,7 +1,6 @@
 import { useCallback, useId as useReactId } from "react";
 
 import { useControllable } from "../utils/useControllable";
-import { Key } from "../utils/keyboard";
 
 type UseRadioGroupProps = {
   value?: string | undefined;
@@ -31,41 +30,8 @@ export function useRadioGroup({
   orientation = "vertical",
 }: UseRadioGroupProps = {}): UseRadioGroupReturn {
   const [selectedValue, setSelectedValue] = useControllable({ value, defaultValue, onChange });
-  const groupName = name ?? useReactId();
-
-  const handleKeyDown = useCallback(
-    (event: React.KeyboardEvent<HTMLElement>, itemValue: string, allValues: string[]) => {
-      const isVertical = orientation === "vertical";
-      const prevKey = isVertical ? Key.ArrowUp : Key.ArrowLeft;
-      const nextKey = isVertical ? Key.ArrowDown : Key.ArrowRight;
-
-      const currentIndex = allValues.indexOf(itemValue);
-      let nextIndex: number | null = null;
-
-      if (event.key === prevKey) {
-        nextIndex = currentIndex > 0 ? currentIndex - 1 : allValues.length - 1;
-      } else if (event.key === nextKey) {
-        nextIndex = currentIndex < allValues.length - 1 ? currentIndex + 1 : 0;
-      } else if (event.key === Key.Home) {
-        nextIndex = 0;
-      } else if (event.key === Key.End) {
-        nextIndex = allValues.length - 1;
-      }
-
-      if (nextIndex !== null) {
-        event.preventDefault();
-        const nextValue = allValues[nextIndex];
-        if (nextValue !== undefined) {
-          setSelectedValue(nextValue);
-          // Move focus to the newly selected radio
-          const group = event.currentTarget.closest('[role="radiogroup"]');
-          const nextRadio = group?.querySelector<HTMLInputElement>(`input[value="${nextValue}"]`);
-          nextRadio?.focus();
-        }
-      }
-    },
-    [orientation, setSelectedValue],
-  );
+  const autoId = useReactId();
+  const groupName = name ?? autoId;
 
   const groupProps: React.HTMLAttributes<HTMLElement> = {
     role: "radiogroup",

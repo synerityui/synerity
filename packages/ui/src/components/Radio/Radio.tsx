@@ -1,6 +1,7 @@
 import { createContext, forwardRef, useContext } from "react";
 import clsx from "clsx";
 import { useRadioGroup } from "@synerity/headless";
+import type React from "react";
 
 import styles from "./Radio.module.css";
 
@@ -88,4 +89,3 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
 
 Radio.displayName = "Radio";
 
-import type React from "react";

@@ -1,5 +1,4 @@
-import { forwardRef } from "react";
-import React from "react";
+import React, { forwardRef } from "react";
 import clsx from "clsx";
 import { useMenu } from "@synerity/headless";
 

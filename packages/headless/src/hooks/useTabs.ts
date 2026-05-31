@@ -33,8 +33,8 @@ export function useTabs({
   const [selectedValue, setSelectedValue] = useControllable({ value, defaultValue, onChange });
   const baseId = useId("tabs");
 
-  const tabId = (v: string) => `${baseId}-tab-${v}`;
-  const panelId = (v: string) => `${baseId}-panel-${v}`;
+  const tabId = useCallback((v: string) => `${baseId}-tab-${v}`, [baseId]);
+  const panelId = useCallback((v: string) => `${baseId}-panel-${v}`, [baseId]);
 
   const tablistProps: React.HTMLAttributes<HTMLElement> = {
     role: "tablist",
@@ -83,7 +83,7 @@ export function useTabs({
       onClick: () => !disabled && setSelectedValue(tabValue),
       onKeyDown: (e) => handleTabKeyDown(e, []),
     }),
-    [selectedValue, setSelectedValue, handleTabKeyDown, baseId],
+    [selectedValue, setSelectedValue, handleTabKeyDown, tabId, panelId],
   );
 
   const getTabPanelProps = useCallback(
@@ -94,7 +94,7 @@ export function useTabs({
       tabIndex: 0,
       hidden: selectedValue !== panelValue,
     }),
-    [selectedValue, baseId],
+    [selectedValue, panelId, tabId],
   );
 
   return { tablistProps, getTabProps, getTabPanelProps, selectedValue };

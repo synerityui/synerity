@@ -46,6 +46,7 @@ export function useSelect({
   defaultOpen = false,
   onOpenChange,
   disabled = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   placeholder = "Select an option",
 }: UseSelectProps): UseSelectReturn {
   const [selectedValue, setSelectedValue] = useControllable({ value, defaultValue, onChange });
