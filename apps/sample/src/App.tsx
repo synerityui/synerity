@@ -14,7 +14,7 @@ import {
   Spinner,
   Stack,
   Switch,
-  Tabs,
+  Tab, TabList, TabPanel, Tabs,
   Text,
   Textarea,
   Tooltip,
@@ -157,7 +157,7 @@ export default function App() {
                 <Checkbox indeterminate label="Indeterminate state" />
                 <Checkbox disabled label="Disabled checkbox" />
               </Stack>
-              <Switch checked={switched} onChange={(e) => setSwitched(e.target.checked)} label={switched ? "Notifications on" : "Notifications off"} />
+              <Switch checked={switched} onChange={(val) => setSwitched(val)} label={switched ? "Notifications on" : "Notifications off"} />
             </Stack>
           </div>
         </Section>
@@ -171,12 +171,12 @@ export default function App() {
                   <Avatar name="Bhushan Gadekar" size="md" />
                   <div>
                     <Heading level={4}>Bhushan Gadekar</Heading>
-                    <Text size="sm" color="muted">Admin · Pro plan</Text>
+                    <Text size="sm" color="secondary">Admin · Pro plan</Text>
                   </div>
                 </Group>
               </CardHeader>
               <CardBody>
-                <Text size="sm" color="muted">
+                <Text size="sm" color="secondary">
                   Building Synerity — a headless React component library with zero-runtime CSS and full WCAG compliance.
                 </Text>
               </CardBody>
@@ -201,7 +201,7 @@ export default function App() {
                   </AvatarGroup>
                   <Group gap="12px" align="center">
                     <Spinner size="sm" />
-                    <Text size="sm" color="muted">Loading member data…</Text>
+                    <Text size="sm" color="secondary">Loading member data…</Text>
                   </Group>
                   <Group gap="12px" align="center">
                     <Spinner size="md" />
@@ -216,25 +216,24 @@ export default function App() {
         {/* Tabs */}
         <Section title="Tabs">
           <Stack gap="16px">
-            <Tabs
-              defaultValue="overview"
-              variant="line"
-              items={[
-                { value: "overview",  label: "Overview",  content: <Text size="sm" color="muted" style={{ paddingTop: 12 }}>Project overview and recent activity.</Text> },
-                { value: "analytics", label: "Analytics", content: <Text size="sm" color="muted" style={{ paddingTop: 12 }}>Download stats and usage metrics.</Text> },
-                { value: "settings",  label: "Settings",  content: <Text size="sm" color="muted" style={{ paddingTop: 12 }}>Configure project settings.</Text> },
-              ]}
-            />
-            <Tabs
-              defaultValue="day"
-              variant="pills"
-              items={[
-                { value: "day",   label: "Day",   content: null },
-                { value: "week",  label: "Week",  content: null },
-                { value: "month", label: "Month", content: null },
-                { value: "year",  label: "Year",  content: null },
-              ]}
-            />
+            <Tabs defaultValue="overview" variant="line">
+              <TabList>
+                <Tab value="overview">Overview</Tab>
+                <Tab value="analytics">Analytics</Tab>
+                <Tab value="settings">Settings</Tab>
+              </TabList>
+              <TabPanel value="overview"><Text size="sm" color="secondary" style={{ paddingTop: 12 }}>Project overview and recent activity.</Text></TabPanel>
+              <TabPanel value="analytics"><Text size="sm" color="secondary" style={{ paddingTop: 12 }}>Download stats and usage metrics.</Text></TabPanel>
+              <TabPanel value="settings"><Text size="sm" color="secondary" style={{ paddingTop: 12 }}>Configure project settings.</Text></TabPanel>
+            </Tabs>
+            <Tabs defaultValue="day" variant="pills">
+              <TabList>
+                <Tab value="day">Day</Tab>
+                <Tab value="week">Week</Tab>
+                <Tab value="month">Month</Tab>
+                <Tab value="year">Year</Tab>
+              </TabList>
+            </Tabs>
           </Stack>
         </Section>
 
@@ -276,7 +275,7 @@ export default function App() {
               </Group>
             }
           >
-            <Text size="sm" color="muted">
+            <Text size="sm" color="secondary">
               "Button" will be permanently removed from your project. This action cannot be undone.
             </Text>
           </Modal>
@@ -296,7 +295,7 @@ export default function App() {
               <Stack gap="16px">
                 <Group gap="16px">
                   <Badge variant="primary">{graph.nodes().length} nodes</Badge>
-                  <Text size="sm" color="muted">Query: "billing" · maxTokens: 200</Text>
+                  <Text size="sm" color="secondary">Query: "billing" · maxTokens: 200</Text>
                 </Group>
                 <pre style={{
                   fontFamily: "var(--synerity-font-mono)", fontSize: 12, lineHeight: 1.65,
