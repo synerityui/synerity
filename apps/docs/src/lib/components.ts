@@ -846,6 +846,107 @@ export const components: ComponentDoc[] = [
       },
     ],
   },
+  // ── Feedback & Display (missing entries) ─────────────────────────────────
+  {
+    slug: "progress",
+    name: "Progress",
+    category: "Feedback & Display",
+    description: "Linear progress bar with role=\"progressbar\" and full ARIA value wiring. Supports xs–lg sizes and an optional label/value display.",
+    props: [
+      { name: "value", type: "number", required: true, description: "Current progress value." },
+      { name: "max", type: "number", default: "100", description: "Maximum value." },
+      { name: "size", type: '"xs" | "sm" | "md" | "lg"', default: '"md"', description: "Track height." },
+      { name: "label", type: "string", description: "Accessible label — also shown above the track." },
+      { name: "showValue", type: "boolean", default: "false", description: "Renders the numeric percentage beside the label." },
+      { name: "className", type: "string", description: "Additional CSS class for the root element." },
+    ],
+    examples: [
+      { title: "Basic", code: `<Progress value={60} />` },
+      { title: "With label and value", code: `<Progress value={72} label="Upload progress" showValue />` },
+      { title: "Sizes", code: `<Progress value={40} size="xs" />\n<Progress value={40} size="sm" />\n<Progress value={40} size="md" />\n<Progress value={40} size="lg" />` },
+    ],
+    aria: ['role="progressbar"', "aria-valuenow", "aria-valuemin", "aria-valuemax", "aria-label"],
+  },
+  {
+    slug: "skeleton",
+    name: "Skeleton",
+    category: "Feedback & Display",
+    description: "Shimmer loading placeholder. Rendered with aria-hidden so it is invisible to assistive technology. Pair with a wrapping role=\"status\" aria-label=\"Loading…\" to communicate state to screen readers.",
+    props: [
+      { name: "width", type: "string | number", description: "Explicit width. Defaults to 100% of the container." },
+      { name: "height", type: "string | number", description: "Explicit height. Defaults to 1em." },
+      { name: "radius", type: "string | number", description: "Overrides the default rounded radius." },
+      { name: "circle", type: "boolean", default: "false", description: "Applies border-radius: 9999px — useful for avatar placeholders." },
+      { name: "className", type: "string", description: "Additional CSS class for the root element." },
+    ],
+    examples: [
+      { title: "Text lines", code: `<Skeleton height={14} style={{ marginBottom: 8 }} />\n<Skeleton height={14} width="70%" />` },
+      { title: "Avatar placeholder", code: `<Skeleton circle width={48} height={48} />` },
+      { title: "Card skeleton", code: `<Stack gap="sm">\n  <Skeleton height={160} />\n  <Skeleton height={14} />\n  <Skeleton height={14} width="60%" />\n</Stack>` },
+    ],
+  },
+  // ── Navigation (missing entry) ────────────────────────────────────────────
+  {
+    slug: "pagination",
+    name: "Pagination",
+    category: "Navigation",
+    description: "Page navigation with automatic ellipsis for large page counts. Renders a <nav> with aria-label=\"Pagination\" and aria-current=\"page\" on the active page button.",
+    props: [
+      { name: "total", type: "number", required: true, description: "Total number of items (not pages)." },
+      { name: "page", type: "number", required: true, description: "Current active page (1-indexed)." },
+      { name: "onChange", type: "(page: number) => void", required: true, description: "Called when the user navigates to a different page." },
+      { name: "pageSize", type: "number", default: "10", description: "Items per page — used to compute total pages." },
+      { name: "siblings", type: "number", default: "1", description: "Pages shown on each side of the active page." },
+      { name: "boundaries", type: "number", default: "1", description: "Pages always shown at each end." },
+      { name: "size", type: '"sm" | "md" | "lg"', default: '"md"', description: "Controls button size." },
+      { name: "className", type: "string", description: "Additional CSS class for the root element." },
+    ],
+    examples: [
+      { title: "Basic", code: `const [page, setPage] = useState(1);\n\n<Pagination total={100} page={page} onChange={setPage} />` },
+      { title: "Custom page size", code: `<Pagination total={500} pageSize={25} page={1} onChange={setPage} />` },
+      { title: "More siblings", code: `<Pagination total={200} page={5} siblings={2} onChange={setPage} />` },
+    ],
+    aria: ['aria-label="Pagination" on <nav>', 'aria-label="Previous page" / "Next page"', 'aria-current="page" on active page button'],
+    keyboard: [
+      { key: "Tab", action: "Move focus between page buttons" },
+      { key: "Enter / Space", action: "Navigate to the focused page" },
+    ],
+  },
+  // ── Overlays (missing entry) ──────────────────────────────────────────────
+  {
+    slug: "popover",
+    name: "Popover",
+    category: "Overlays",
+    description: "Non-modal floating panel anchored to a trigger element. No focus trap or scroll lock — use Modal for blocking interactions. Closes on outside click or Escape.",
+    props: [
+      { name: "trigger", type: "ReactElement", required: true, description: "Element that opens the popover. Must accept a ref and event handler props." },
+      { name: "children", type: "ReactNode", required: true, description: "Content rendered inside the floating panel." },
+      { name: "open", type: "boolean", description: "Controlled open state." },
+      { name: "defaultOpen", type: "boolean", description: "Uncontrolled initial open state." },
+      { name: "onOpenChange", type: "(open: boolean) => void", description: "Called when the popover opens or closes." },
+      { name: "placement", type: '"top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end"', default: '"bottom"', description: "Position of the floating panel relative to the trigger." },
+      { name: "className", type: "string", description: "Additional CSS class for the popover panel." },
+    ],
+    examples: [
+      {
+        title: "Basic",
+        code: `<Popover trigger={<Button>Open</Button>}>\n  <div style={{ padding: 16 }}>Popover content</div>\n</Popover>`,
+      },
+      {
+        title: "Placement",
+        code: `<Popover placement="top" trigger={<Button>Top</Button>}>\n  Opens above the trigger\n</Popover>`,
+      },
+      {
+        title: "Controlled",
+        code: `const [open, setOpen] = useState(false);\n\n<Popover open={open} onOpenChange={setOpen} trigger={<Button>Toggle</Button>}>\n  <p>Controlled popover</p>\n</Popover>`,
+      },
+    ],
+    aria: ["aria-expanded on trigger", "aria-haspopup on trigger", "role=\"dialog\" on panel"],
+    keyboard: [
+      { key: "Escape", action: "Close the popover" },
+      { key: "Tab", action: "Move focus within the popover content" },
+    ],
+  },
   // ── Data Display (2 new) ──────────────────────────────────────────────────
   {
     slug: "table",

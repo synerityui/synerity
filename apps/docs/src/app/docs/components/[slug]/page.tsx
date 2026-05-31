@@ -4,6 +4,7 @@ import Link from "next/link";
 import { components, componentBySlug } from "@/lib/components";
 import { PropsTable } from "@/components/PropsTable";
 import { CodeBlock } from "@/components/CodeBlock";
+import { ComponentDemo } from "@/components/ComponentDemo";
 
 type Props = { params: { slug: string } };
 
@@ -46,6 +47,10 @@ export default function ComponentPage({ params }: Props) {
       {/* Import */}
       <h2 style={{ fontSize: 18, fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 12 }}>Import</h2>
       <CodeBlock code={`import { ${c.name} } from '@synerity/ui'`} />
+
+      {/* Live Demo */}
+      <h2 style={{ fontSize: 18, fontWeight: 700, letterSpacing: "-0.02em", margin: "40px 0 16px" }}>Demo</h2>
+      <ComponentDemo slug={c.slug} />
 
       {/* Examples */}
       <h2 style={{ fontSize: 18, fontWeight: 700, letterSpacing: "-0.02em", margin: "40px 0 16px" }}>Examples</h2>

@@ -6,4 +6,5 @@ export default defineWorkspace([
   "packages/ui/vitest.config.ts",
   "packages/forms/vitest.config.ts",
   "packages/icons/vitest.config.ts",
+  "packages/memory-graph/vitest.config.ts",
 ]);

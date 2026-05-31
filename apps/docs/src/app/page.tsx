@@ -11,7 +11,7 @@ const FEATURES = [
 ];
 
 const PACKAGES = [
-  { name: "@synerity/ui", desc: "18 polished components", href: "/docs/components" },
+  { name: "@synerity/ui", desc: "45 polished components", href: "/docs/components" },
   { name: "@synerity/headless", desc: "Logic & a11y hooks, zero CSS", href: "/docs/getting-started" },
   { name: "@synerity/tokens", desc: "CSS custom property system", href: "/docs/tokens" },
   { name: "@synerity/icons", desc: "75 tree-shakeable icons", href: "/docs/icons" },
