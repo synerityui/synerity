@@ -38,7 +38,7 @@ describe("useSelect", () => {
 
   it("getOptionProps returns aria-selected=true for selected option", () => {
     const { result } = renderHook(() => useSelect({ options: OPTIONS, defaultValue: "a" }));
-    const optionProps = result.current.getOptionProps(OPTIONS[0]);
+    const optionProps = result.current.getOptionProps(OPTIONS[0]!);
     expect(optionProps["aria-selected"]).toBe(true);
   });
 
@@ -46,7 +46,7 @@ describe("useSelect", () => {
     const onChange = vi.fn();
     const { result } = renderHook(() => useSelect({ options: OPTIONS, onChange, open: true, onOpenChange: vi.fn() }));
     act(() => {
-      result.current.getOptionProps(OPTIONS[1]).onClick?.({} as React.MouseEvent<HTMLElement>);
+      result.current.getOptionProps(OPTIONS[1]!).onClick?.({} as React.MouseEvent<HTMLElement>);
     });
     expect(onChange).toHaveBeenCalledWith("b");
   });

@@ -42,7 +42,7 @@ describe("useCombobox", () => {
       } as React.ChangeEvent<HTMLInputElement>);
     });
     expect(result.current.filteredOptions).toHaveLength(1);
-    expect(result.current.filteredOptions[0].value).toBe("vue");
+    expect(result.current.filteredOptions[0]!.value).toBe("vue");
   });
 
   it("clicking an option calls onChange with the value", () => {
@@ -52,7 +52,7 @@ describe("useCombobox", () => {
       result.current.inputProps.onFocus?.({} as React.FocusEvent<HTMLInputElement>);
     });
     act(() => {
-      result.current.getOptionProps(OPTIONS[0]).onClick?.({} as React.MouseEvent<HTMLElement>);
+      result.current.getOptionProps(OPTIONS[0]!).onClick?.({} as React.MouseEvent<HTMLElement>);
     });
     expect(onChange).toHaveBeenCalledWith("react");
   });
