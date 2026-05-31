@@ -31,7 +31,7 @@ describe("Chip", () => {
     const onRemove = vi.fn();
     render(<Chip label="Tag" onRemove={onRemove} disabled />);
     await userEvent.click(screen.getByRole("button", { name: "Remove" }), {
-      skipPointerEventsCheck: true,
+      pointerEventsCheck: 0,
     });
     expect(onRemove).not.toHaveBeenCalled();
   });

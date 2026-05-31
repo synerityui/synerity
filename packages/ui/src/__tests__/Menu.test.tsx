@@ -7,7 +7,7 @@ import { Button } from "../components/Button";
 
 function TestMenu({ onSelect }: { onSelect?: (v: string) => void }) {
   return (
-    <Menu trigger={<Button>Actions</Button>} onSelect={onSelect}>
+    <Menu trigger={<Button>Actions</Button>} {...(onSelect ? { onSelect } : {})}>
       <MenuItem value="edit">Edit</MenuItem>
       <MenuItem value="copy">Copy</MenuItem>
       <MenuDivider />

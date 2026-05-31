@@ -12,7 +12,7 @@ function TestGroup({
   onChange?: (v: string) => void;
 }) {
   return (
-    <RadioGroup defaultValue={defaultValue} onChange={onChange} name="color">
+    <RadioGroup {...(defaultValue ? { defaultValue } : {})} {...(onChange ? { onChange } : {})} name="color">
       <Radio value="red" label="Red" />
       <Radio value="green" label="Green" />
       <Radio value="blue" label="Blue" disabled />

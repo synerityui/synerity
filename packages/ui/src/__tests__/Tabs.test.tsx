@@ -6,7 +6,7 @@ import { Tabs, TabList, Tab, TabPanel } from "../components/Tabs";
 
 function TestTabs({ onChange }: { onChange?: (v: string) => void }) {
   return (
-    <Tabs defaultValue="a" onChange={onChange}>
+    <Tabs defaultValue="a" {...(onChange ? { onChange } : {})}>
       <TabList>
         <Tab value="a">Tab A</Tab>
         <Tab value="b">Tab B</Tab>
