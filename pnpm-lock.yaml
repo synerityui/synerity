@@ -125,8 +125,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0
       '@synerity/ui':
-        specifier: 0.1.2
-        version: 0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: workspace:*
+        version: link:../../packages/ui
       react:
         specifier: ^18.3.0
         version: 18.3.1
@@ -1444,12 +1444,6 @@ packages:
 
   '@synerity/tokens@0.1.0':
     resolution: {integrity: sha512-Qf3gVf+cHilcEsvJLoQ0dxTNWVUdEP533C8feNIPMD+kjpIqC3ouQMjQ7n3lPiKr+3wCjULq120n9AzXquOFWQ==}
-
-  '@synerity/ui@0.1.2':
-    resolution: {integrity: sha512-LA3yW5Fhtxup8q6vA4DybRUrOirSq4dDnoswLxMvy1xlPtFw933STTqFUQ+toYrWkSoMFrWTt6zOdwOl0LzehA==}
-    peerDependencies:
-      react: '>=18.0.0'
-      react-dom: '>=18.0.0'
 
   '@testing-library/dom@10.4.1':
     resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
@@ -4479,14 +4473,6 @@ snapshots:
   '@synerity/memory-graph@0.1.0': {}
 
   '@synerity/tokens@0.1.0': {}
-
-  '@synerity/ui@0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@synerity/headless': 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@synerity/tokens': 0.1.0
-      clsx: 2.1.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   '@testing-library/dom@10.4.1':
     dependencies:
