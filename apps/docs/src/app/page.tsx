@@ -41,7 +41,7 @@ export default function HomePage() {
           fontSize: 18, color: "var(--syn-text-muted)", lineHeight: 1.65,
           maxWidth: 560, margin: "0 auto 40px",
         }}>
-          A React UI library that doesn't make you choose between RSC compatibility,
+          A React UI library that doesn&apos;t make you choose between RSC compatibility,
           zero-runtime CSS, WCAG accessibility, strict TypeScript, and painless theming.
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>

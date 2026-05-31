@@ -68,7 +68,7 @@ npx synerity add button modal input table
 npx synerity add --all`} />
 
       <H2>Dark mode</H2>
-      <P>Dark mode is driven entirely by CSS. Set data-theme="dark" on the root element to switch.</P>
+      <P>Dark mode is driven entirely by CSS. Set <code>data-theme=&quot;dark&quot;</code> on the root element to switch.</P>
       <CodeBlock code={`// Toggle on the document root
 document.documentElement.setAttribute('data-theme', 'dark')
 

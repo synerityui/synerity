@@ -127,7 +127,7 @@ import '@synerity/tokens/css'
 
       <p style={{ color: "var(--syn-text-muted)", lineHeight: 1.7, margin: "16px 0 40px" }}>
         Dark mode is handled automatically — all tokens redefine under{" "}
-        <code style={{ fontFamily: "var(--syn-font-mono)", fontSize: 13 }}>[data-theme="dark"]</code>.
+        <code style={{ fontFamily: "var(--syn-font-mono)", fontSize: 13 }}>[data-theme=&quot;dark&quot;]</code>.
         Set that attribute on <code style={{ fontFamily: "var(--syn-font-mono)", fontSize: 13 }}>{"<html>"}</code> to switch modes.
       </p>
 

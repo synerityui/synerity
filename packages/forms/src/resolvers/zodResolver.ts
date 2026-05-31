@@ -1,6 +1,6 @@
 import type { FieldValues, Resolver, ZodSafeParseResult } from "../types";
 
-type ZodSchema<TValues> = {
+type ZodSchema = {
   safeParseAsync: (data: unknown) => Promise<ZodSafeParseResult>;
   /** Also support sync `.safeParse` for convenience — we always call the async variant. */
   safeParse?: (data: unknown) => ZodSafeParseResult;
@@ -21,7 +21,7 @@ type ZodSchema<TValues> = {
  * ```
  */
 export function zodResolver<TValues extends FieldValues = FieldValues>(
-  schema: ZodSchema<TValues>,
+  schema: ZodSchema,
 ): Resolver<TValues> {
   return async (values): Promise<{ errors: Record<string, string> }> => {
     const result = await schema.safeParseAsync(values);

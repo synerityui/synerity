@@ -43,7 +43,6 @@ import {
   Refresh,
   Search,
   Settings,
-  Share,
   Shield,
   Sliders,
   Sort,
